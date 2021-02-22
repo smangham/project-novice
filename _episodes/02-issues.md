@@ -1,17 +1,17 @@
 ---
-title: "Checking and Previewing"
-teaching: 5
-exercises: 0
+title: "Raising issues"
+teaching: 10
+exercises: 5
 questions:
-- "How can lesson formatting be checked?"
-- "How can lessons be previewed?"
+- "How can I keep track of bugs and problems?"
+- "How can I communicate them to users?"
 objectives:
-- "Run the lesson checking script and interpret its output correctly."
-- "Preview a lesson locally."
+- "Learn what issues are and how to use them."
+- "Create an issue on GitHub."
 keypoints:
-- "Lessons are checked by running `make lesson-check`."
-- "The checker uses the same Markdown parser as Jekyll."
-- "Lessons can be previewed by running `make serve`."
+- "Issues are "
+- "Issues can be categorised by type."
+- "???"
 ---
 
 The lesson template comes with several utilities to simplify lesson development and maintenance.
