@@ -1,6 +1,6 @@
 ---
 title: "Release Management"
-teaching: 30
+teaching: 25
 exercises: 10
 questions:
 - "How can I manage the release of my code?"

@@ -1,6 +1,6 @@
 ---
-title: "Project boards"
-teaching: 20
+title: "Project management"
+teaching: 15
 exercises: 5
 questions:
 - "How can I manage developing my code?"
@@ -16,7 +16,7 @@ keypoints:
 - "Project boards can show the priority of their tasks."
 ---
 
-Most projects (software and *non*-software alike!) consist of multiple tasks. Keeping track of the list of tasks you have to do, and how far you are through each, quickly becomes a non-trivial task itself. Without a good framework, it can be hard to keep track of what's done, or what needs doing, and particularly hard to convey that to others or share the responsibilities out. 
+Developing academic software is a project, and most projects (software and *non*-software alike!) consist of multiple tasks. Keeping track of the list of tasks you have to do, and how far you are through each, quickly becomes a non-trivial task itself. Without a good framework, it can be hard to keep track of what's done, or what needs doing, and particularly hard to convey that to others or share the responsibilities out. 
 
 ## Project boards
 

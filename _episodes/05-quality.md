@@ -1,5 +1,5 @@
 ---
-title: "Writing Quality Code"
+title: "Writing Sustainable Code"
 teaching: 30
 exercises: 0
 questions:
@@ -18,404 +18,219 @@ keypoints:
 - "Python Enhancement Proposals (or PEPs) describe a recommended convention or specification for how to do something in Python."
 ---
 
-A lesson consists of one or more episodes,
-each of which has:
 
-*   a [YAML][yaml] header containing required values
-*   some teachable content
-*   some exercises
+Executable code is for machines, whilst source code is for humans. Generally speaking, code is write once, read many. So we should ensure our code is readable and understandable by both others and also ourselves when we come back to it later. Let's look at a few key ways we can do this in our code, using Python as an example language, then look at using these techniques to improve our Managing Academics and Numpy/Matplotlib code we wrote earlier.
 
-The diagram below shows the internal structure of a single episode file
-(click on the image to see a larger version):
+## Set up training materials
 
-<a href="{{ page.root }}/fig/episode-format.png">
-  <img src="{{ page.root }}/fig/episode-format-small.png" alt="Formatting Rules" />
-</a>
-
-## Maximum Line Length
-
-Limit all lines to a maximum of 100 characters.
-`bin/lesson_check.py` will report lines longer than 100 characters
-and this can block your contributions of being accepted.
-
-The two reasons behind the decision to enforce a maximum line length are
-(1) make diff and merge easier in the command line and other user interfaces
-and
-(2) make update of translation of the lessons easier.
-
-## Locations and Names
-
-Episode files are stored in `_episodes`
-or, for the case of R Markdown files, `_episodes_rmd`
-so that [Jekyll][jekyll] will create a [collection][jekyll-collection] for them.
-Episodes are named `dd-subject.md`,
-where `dd` is a two-digit sequence number (with a leading 0)
-and `subject` is a one- or two-word identifier.
-For example,
-the first three episodes of this example lesson are
-`_episodes/01-design.md`,
-`_episodes/02-tooling.md`
-and `_episodes/03-formatting.md`.
-These become `/01-design/index.html`, `/02-tooling/index.html`, and `/03-formatting/index.html`
-in the published site.
-When referring to other episodes, use:
-
-{% raw %}
-    [link text]({{ page.root }}{% link _episodes/dd-subject.md %})
-{% endraw %}
-
-_i.e._, use [Jekyll's link tag][jekyll-link-tag] and the name of the file.
-
-## Episode Header
-
-Each episode's [YAML][yaml] header must contain:
-
-*   the episode's title
-*   time estimates for teaching and exercises
-*   motivating questions
-*   lesson objectives
-*   a summary of key points
-
-These values are stored in the header so that [Jekyll][jekyll] will read them
-and make them accessible in other pages as `site.episodes.the_episode.key`,
-where `the_episode` is the particular episode
-and `key` is the key in the [YAML][yaml] header.
-This lets us do things like
-list each episode's key questions in the syllabus on the lesson home page.
-
-## Episode Structure
-
-The episode layout template in `_layouts/episode.html` automatically creates
-an introductory block that summarizes the lesson's teaching time,
-exercise time,
-key questions,
-and objectives.
-It also automatically creates a closing block that lists its key points.
-In between,
-authors should use only:
-
-*   paragraphs
-*   images
-*   tables
-*   ordered and unordered lists
-*   code samples (described below).
-*   special blockquotes (described below)
-
-Authors should *not* use:
-
-*   sub-titles (instead, use H2 subheadings (`##`) in the episode files)
-*   HTML layout (e.g., `div` elements).
-
-
-> ## Linking section IDs
->
-> In the HTML output each header of a section, code sample, exercise will be associated with an unique ID (the rules of
-> the ID generation are given in kramdown [documentation](https://kramdown.gettalong.org/converter/html.html#auto-ids),
-> but it is easier to look for them directly in the page sources).
-> These IDs can be used to easily link to the section by attaching the hash (`#`) followed by the ID to the page's URL
-> (like [this](#linking-section-ids)). For example, the instructor might copy the link to
-> the etherpad, so that the lesson opens in learners' web browser directly at the right spot.
-{: .callout}
-
-## Formatting Code
-
-Inline code fragments are formatted using back-quotes.
-Longer code blocks are formatted by opening and closing the block with `~~~` (three tildes),
-with a class specifier after the block:
-
-{% raw %}
-    ~~~
-    for thing in collection:
-        do_something
-    ~~~
-    {: .source}
-{% endraw %}
-
-which is rendered as:
+So let's download the training materials for this material from the GitHub code repository online. Go to [https://github.com/SABS-R3/2020-software-engineering-day3/tree/gh-pages](https://github.com/SABS-R3/2020-software-engineering-day3/tree/gh-pages) in a browser (any will do, although Firefox is already installed on the provided laptops). Select the green `Code` button, and then select `Download ZIP`, and then in Firefox selecting `Save File` at the dialogue prompt. This will download all the files within a single archive file. After it's finished downloading, we need to extract all files from the archive. Find where the file has been downloaded to (on the provided laptops this is `/home/sabsr3/Downloads`, then start a terminal. You can start a terminal by right-clicking on the desktop and selecting `Open in Terminal`. Assuming the file has downloaded to e.g. `/home/sabsr3/Downloads`, type the following within the Terminal shell:
 
 ~~~
-for thing in collection:
-    do_something
-~~~
-{: .source}
-
-The class specified at the bottom using an opening curly brace and colon,
-the class identifier with a leading dot,
-and a closing curly brace.
-The [template]({{ site.template_repo }}) provides three styles for code blocks:
-
-~~~
-.source: program source.
-~~~
-{: .source}
-
-~~~
-.output: program output.
-~~~
-{: .output}
-
-~~~
-.error: error messages.
-~~~
-{: .error}
-
-### Syntax Highlighting
-
-The following styles like `.source`, but include syntax highlighting for the
-specified language.
-Please use them where possible to indicate the type of source being displayed,
-and to make code easier to read.
-
-`.language-bash`: Bash shell commands:
-
-~~~
-echo "Hello World"
+cd
+unzip /home/sabsr3/Downloads/2020-software-engineering-day3-gh-pages.zip
 ~~~
 {: .language-bash}
 
-`.language-html`: HTML source:
+As a reminder, the first `cd ` command without any arguments *changes our working directory* to our home directory (on the provisioned laptops, this is `/home/sabsr3`).
+
+The second command uses the unzip program to unpack the archive in your home directory, within a subdirectory called `2020-software-engineering-day3-gh-pages`. This subdirectory name is a little long to easily work with, so we'll rename it to something shorter:
 
 ~~~
-<html>
-<body>
-<em>Hello World</em>
-</body>
-</html>
+mv 2020-software-engineering-day3-gh-pages 2020-se-day3
 ~~~
-{: .language-html}
+{: .language-bash}
 
-`.language-make`: Makefiles:
+Change to the `code` directory within that new directory:
 
 ~~~
-all:
-    g++ main.cpp hello.cpp -o hello
+cd 2020-se-day3/code
 ~~~
-{: .language-make}
+{: .language-bash}
 
-`.language-matlab`: MATLAB source:
+## Naming Things
 
-~~~
-disp('Hello, world!')
-~~~
-{: .language-matlab}
+The careful selection of names is very important to understanding. Cryptic names of components, modules, classes, functions, arguments, exceptions and variables can lead to confusion about the role that these components play.
 
-`.language-python`: Python source:
+Good naming is fundamental to good design, because source code represents the most detailed version of our design. Compare and contrast the ease with which the following statements can be understood (here for illustrative purposes only):
 
 ~~~
-print("Hello World")
+out(p(f(v), 2) + 1)
+
+print(process(fibonacci(argument), 2) + 1)
 ~~~
 {: .language-python}
 
-`.language-r`: R source:
+There are common naming recommendations:
+
+- Modules, components and classes are typically *nouns* (e.g. Molecule, BlackHole, DNASequence)
+- Functions and methods are typically *verbs* (e.g. spliceGeneSequence, calculateOrbit)
+- Boolean functions and methods are typically expressed as *questions about properties* (e.g. isStable, running, containsAtom)
+
+
+## Documenting your Code
+
+### Comments
+
+Source code tells the reader what the code does. Comments allow us to provide the reader with additional information - it's always a good idea to keep others in mind when writing code. As a reminder, you can add a comment using the `#` symbol on a line:
 
 ~~~
-cat("Hello World")
+def fahr_to_cels(fahr):
+    # Convert temperature in Fahrenheit to Celsius
+    cels = (fahr + 32) * (5 / 9)
+    return cels
 ~~~
-{: .language-r}
+{: .language-python}
 
-`.language-sql`: SQL source:
-
-~~~
-CREATE PROCEDURE HelloWorld AS
-PRINT 'Hello, world!'
-RETURN (0)
-~~~
-{: .language-sql}
-
-> ## Highlighting for other languages
-> You may use other `language-*` classes to activate syntax highlighting
-> for other languages.
-> For example,
->
-> {% raw %}
->     ~~~
->     title: "YAML Highlighting Example"
->     description: "This is an example of syntax highlighting for YAML."
->     array_values:
->         - value_1
->         - value_2
->     ~~~
->     {: .language-yaml }
-> {% endraw %}
->
->
-> will produce this:
->
-> ~~~
-> title: "YAML Highlighting Example"
-> description: "This is an example of syntax highlighting for YAML."
-> array_values:
->     - value_1
->     - value_2
-> ~~~
-> {: .language-yaml }
->
->
-> Note that using `.language-*` classes other than
-> `.language-bash`
-> `.language-html`,
-> `.language-make`,
-> `.language-matlab`,
-> `.language-python`,
-> `.language-r`,
-> or `.language-sql`
-> will currently cause one of the tests in the lesson template's
-> `make lesson-check` to fail for your lesson,
-> but will not prevent lesson pages from building and rendering correctly.
->
-{: .solution }
-
-
-## Special Blockquotes
-
-We use blockquotes to group headings and text
-rather than wrapping them in `div` elements.
-in order to avoid confusing [Jekyll][jekyll]'s parser
-(which sometimes has trouble with Markdown inside HTML).
-Each special blockquote must started with a level-2 header,
-but may contain anything after that.
-For example,
-a callout is formatted like this:
+You can also add these at the end of lines, e.g.:
 
 ~~~
-> ## Callout Title
->
-> text
-> text
-> text
->
-> ~~~
-> code
-> ~~~
-> {: .source}
-{: .callout}
+def fahr_to_cels(fahr):
+    cels = (fahr + 32) * (5 / 9) # Convert temperature in Fahrenheit to Celsius
+    return cels
 ~~~
-{: .source}
+{: .language-python}
 
-(Note the empty lines within the blockquote after the title and before the code block.)
-This is rendered as:
+Python doesn't have any multi-line comments, like you may have seen in other languages like C++ or Java. However, there
+ are ways to do it using *docstrings*, which are recommended in certain cases, as we'll see in a moment.
 
-> ## Callout Title
+A good rule of thumb is to assume that someone will **always** read your code at a later date, and this includes a future version of yourself. It can be easy to forget why you did something a particular way in six months time.
+
+The reader should be able to understand a single function or method from its code and its comments, and should not have to look elsewhere in the code for clarification. It can be easy to get lost in code, and others will not have the same knowledge of our project or code as we do.
+
+The kind of things that need to be commented are:
+
+- Why certain design or implementation decisions were adopted, especially in cases where the decision may seem counter-intuitive
+- The names of any algorithms or design patterns that have been implemented
+- The expected format of input files or database schemas
+
+There are some restrictions. Comments that simply restate what the code does are redundant, and comments must be
+ accurate, because an incorrect comment causes more confusion than no comment at all.
+
+### Docstrings
+
+If the first thing in a function is a string that isn't assigned to a variable, that string is attached to the function as its documentation. Take a look at this function for calculating Fibonacci numbers:
+
+~~~
+def fibonacci(n):
+    """Calculate the Fibonacci number of the given integer.
+
+    A recursive implementation of Fibonacci.
+
+    :param n: integer
+    :raises ValueError: raised if n is less than zero
+    :returns: fibonacci number
+    """
+    if n < 0:
+        raise ValueError('Fibonacci is not defined for N < 0')
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+
+    return fibonacci(n - 1) + fibonacci(n - 2)
+~~~
+{: .language-python}
+
+Note here we are also explicitly documenting our input variables, what is returned by the function, and also when the `ValueError` exception is raised. Along with a helpful description of what the function does, this information can act as a *contract* for readers to understand what to expect in terms of behaviour when using the function, as well as how to use it.
+
+A comment string like this is called a *docstring*. We don't need to use triple quotes when we write one, but if we do, we can break the string across multiple lines. This also applies to Python modules, which are essentially files of Python functions, and methods within classes.
+
+> ## Python PEP 257 - recommendations for docstrings
 >
-> text
-> text
-> text
+> Python Enhancement Proposals (PEP for short) are design documents for the Python community, typically specifications or conventions for how to do something in Python, a description of a new feature in Python, etc. PEP 257 deals with docstring conventions to standardise how they are used. In PEP 257, for example, on the subject of module-level docstrings:
 >
 > ~~~
-> code
+> The docstring for a module should generally list the classes, exceptions and functions (and any other objects) that are exported by the module, with a one-line summary of each. (These summaries generally give less detail than the summary line in the object's docstring.) The docstring for a package (i.e., the docstring of the package's __init__.py module) should also list the modules and subpackages exported by the package.
 > ~~~
-> {: .source}
+>
+> There are many other PEPs, and we'll be looking into another of these which defines conventions for Python coding style later.
 {: .callout}
 
-The [lesson template]({{ site.template_repo }}) defines styles
-for the following special blockquotes:
-
-<div class="row">
-  <div class="col-md-6" markdown="1">
-
-> ## `.callout`
->
-> An aside or other comment.
-{: .callout}
-
-> ## `.challenge`
->
-> An exercise.
-{: .challenge}
-
-> ## `.checklist`
->
-> Checklists.
-{: .checklist}
-
-> ## `.discussion`
->
-> Discussion questions.
-{: .discussion}
-
-> ## `.keypoints`
->
-> Key points of an episode.
-{: .keypoints}
-
-  </div>
-  <div class="col-md-6" markdown="1">
-
-> ## `.objectives`
->
-> Episode objectives.
-{: .objectives}
-
-> ## `.prereq`
->
-> Prerequisites.
-{: .prereq}
-
-> ## `.solution`
->
-> Exercise solution.
-{: .solution}
-
-> ## `.testimonial`
->
-> A laudatory quote from a user.
-{: .testimonial}
-
-  </div>
-</div>
-
-Note that `.challenge` and `.discussion` have the same color but different icons.
-Note also that one other class, `.quotation`,
-is used to mark actual quotations
-(the original purpose of the blockquote element).
-This does not add any styling,
-but is used to prevent the checking tools from complaining about a missing class.
-
-Most authors will only use `.callout`, `.challenge`, and `.prereq`,
-as the others are automatically generated by the template.
-Note that `.prereq` is meant for describing things
-that learners should know before starting this lesson;
-setup instructions do not have a particular style,
-but are instead put on the `setup.md` page.
-
-Note also that solutions are nested inside exercises as shown below:
+So at the beginning of a module file we can just add a docstring explaining the nature of a module. For example, if `fibonacci()` was included in a module with other functions, our module could have at the start of it:
 
 ~~~
-> ## Challenge Title
+"""A module for generating numerical sequences of numbers that occur in nature.
+
+Functions:
+  fibonacci - returns the Fibonacci number for a given integer
+  golden_ratio - returns the golden ratio number to a given Fibonacci iteration
+  ...
+"""
+...
+~~~
+{: .language-python}
+
+We'll be revisiting module-level docstrings later.
+
+A number of different docstring formats exist:
+
+- reST - based on reStructuredText. This is probably more prevalent nowadays, and is used by default in PyCharm
+- Epytext - historically based on a format of docstrings used for Java, in their javadoc documentation
+- Google - they have their own format
+- numpydoc - recommended by Numpy, based on the Google format, quite verbose
+
+The format we're using here for our examples is reST.
+
+> ## Improved Commenting for our Temperature Functions
 >
-> This is the body of the challenge.
+> ??? UPDATE
 >
 > ~~~
-> it may include some code
+> def fahr_to_cels(fahr):
+>     # Convert temperature in Fahrenheit to Celsius
+>     cels = (fahr + 32) * (5 / 9)
+>     return cels
+>
+> def fahr_to_kelv(fahr):
+>     # Convert temperature in Fahrenheit to Kelvin
+>     cels = fahr_to_cels(fahr)
+>     kelv = cels + 273.15
+>     return kelv
 > ~~~
-> {: .source}
+> {: .language-python}
+>
+> Open the up in a text editor and turn each of the comments into Python docstrings that explain briefly what the function does, its arguments, and what the function returns.
 >
 > > ## Solution
-> >
-> > This is the body of the solution.
-> >
 > > ~~~
-> > it may also include some code
+> > def fahr_to_celsius(fahr):
+> >     """Convert Fahrenheit to Celsius.
+> >
+> >     Uses standard Fahrenheit to Celsius formula.
+> >
+> >     :param fahr: float temperature in Fahrenheit
+> >     :returns: float temperature in Celsius
+> >     """
+> >     celsius = ((fahr - 32) * (5/9))
+> >     return celsius
+> >
+> > def fahr_to_kelvin(fahr):
+> >     """Convert Fahrenheight to Kelvin.
+> >
+> >     Uses standard Fahrenheit to Kelvin formula, making use of fahr_to_celsius function.
+> >
+> >     :param fahr: float temperature in Fahrenheit
+> >     :returns: float temperature in Kelvin
+> >     """
+> >     kelvin = fahr_to_celsius(fahr) + 273.15
+> >     return kelvin
 > > ~~~
-> > {: .output}
+> > {: .language-python}
 > {: .solution}
 {: .challenge}
-~~~
-{: .source}
 
-The double indentation is annoying to edit,
-but the alternatives we considered and discarded are worse:
+> ## Improving our Managing Academics and Data Analysis Codes
+>
+> After writing code and getting it to work, it's a good habit to reflect on what you've written and see if it's readability/maintainability can be improved.
+> See if you can improve your Managing Academics code you wrote earlier in the week, and your Numpy/Matplotlib code, by doing the following:
+>
+> - Rename your variables, functions, and methods to be more descriptive appropriate to their context.
+> - Add comments and docstrings to describe behaviour.
+>
+> A reference implementation of the previous Managing Academic code example can be found in the `code` directory, so feel free to use and amend these if you prefer.
+{: .challenge}
 
-1.  Use HTML `<div>` elements for the challenges.
-    Most people dislike mixing HTML and Markdown,
-    and experience shows that it's all too easy to confuse Jekyll's Markdown parser.
+Commenting and adding docstrings to code is important to describe how our code behaves. Another approach to improve the readability and understandability of our code is *refactoring*, a process where we change the code itself, which we've touched on with renaming. There are other ways we can refactor our code by addressing issues with control flow and modularity, which we'll look at later.
 
-2.  Put solutions immediately after challenges rather than inside them.
-    This is simpler to edit,
-    but clutters up the page
-    and makes it harder for tools to tell which solutions belong to which exercises.
-
-
-[jekyll-link-tag]: https://jekyllrb.com/docs/liquid/tags/#link
 
 {% include links.md %}
