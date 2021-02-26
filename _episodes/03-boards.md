@@ -1,5 +1,5 @@
 ---
-title: "Project management"
+title: "Project Management"
 teaching: 15
 exercises: 5
 questions:

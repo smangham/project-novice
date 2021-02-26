@@ -1,7 +1,7 @@
 ---
 title: "Writing Sustainable Code"
-teaching: 30
-exercises: 0
+teaching: 20
+exercises: 5
 questions:
 - "How do I write code to make future development easier?"
 objectives:
@@ -15,43 +15,19 @@ keypoints:
 - "Add comments to explain why something was done in a certain way if not obvious."
 - "Refrain from adding code comments that just restate what code clearly already does."
 - "Use docstrings contained within `\"\"\"` at the start of functions, methods and modules to explain behaviour and input/output parameters."
-- "Python Enhancement Proposals (or PEPs) describe a recommended convention or specification for how to do something in Python."
 ---
 
+Now we've covered the process around developing and releasing our software. However, one key part of software development we haven't touched on yet is **the code itself**. No matter how well we manage our development, if we don't write **sustainable** code, then our project will suffer. 
 
-Executable code is for machines, whilst source code is for humans. Generally speaking, code is write once, read many. So we should ensure our code is readable and understandable by both others and also ourselves when we come back to it later. Let's look at a few key ways we can do this in our code, using Python as an example language, then look at using these techniques to improve our Managing Academics and Numpy/Matplotlib code we wrote earlier.
+One major problem in software development is **technical debt**- a term for when decisions made early-on in the project (often made on the fly without much thought) end up causing long-term problems, and require a major expenditure of effort to fix (or to *pay off* the technical debt). If you accrue too much technical debt without fixing it, the whole project can become unsustainable, and the effort required to fix them becomes so large you have to throw the project away and start from scratch.
 
-## Set up training materials
+So when developing academic software, we need to make sure it's **sustainable**. One of the key factors for this is keeping your code **readable** and **maintainable**. We want to minimise the amount of effort required for you (or others) to read your code, understand what's going on, and make changes to it.
 
-So let's download the training materials for this material from the GitHub code repository online. Go to [https://github.com/SABS-R3/2020-software-engineering-day3/tree/gh-pages](https://github.com/SABS-R3/2020-software-engineering-day3/tree/gh-pages) in a browser (any will do, although Firefox is already installed on the provided laptops). Select the green `Code` button, and then select `Download ZIP`, and then in Firefox selecting `Save File` at the dialogue prompt. This will download all the files within a single archive file. After it's finished downloading, we need to extract all files from the archive. Find where the file has been downloaded to (on the provided laptops this is `/home/sabsr3/Downloads`, then start a terminal. You can start a terminal by right-clicking on the desktop and selecting `Open in Terminal`. Assuming the file has downloaded to e.g. `/home/sabsr3/Downloads`, type the following within the Terminal shell:
-
-~~~
-cd
-unzip /home/sabsr3/Downloads/2020-software-engineering-day3-gh-pages.zip
-~~~
-{: .language-bash}
-
-As a reminder, the first `cd ` command without any arguments *changes our working directory* to our home directory (on the provisioned laptops, this is `/home/sabsr3`).
-
-The second command uses the unzip program to unpack the archive in your home directory, within a subdirectory called `2020-software-engineering-day3-gh-pages`. This subdirectory name is a little long to easily work with, so we'll rename it to something shorter:
-
-~~~
-mv 2020-software-engineering-day3-gh-pages 2020-se-day3
-~~~
-{: .language-bash}
-
-Change to the `code` directory within that new directory:
-
-~~~
-cd 2020-se-day3/code
-~~~
-{: .language-bash}
+In this episode, we're going to use **python** as an example language. The kind of principles we discuss will be applicable to any language!
 
 ## Naming Things
 
-The careful selection of names is very important to understanding. Cryptic names of components, modules, classes, functions, arguments, exceptions and variables can lead to confusion about the role that these components play.
-
-Good naming is fundamental to good design, because source code represents the most detailed version of our design. Compare and contrast the ease with which the following statements can be understood (here for illustrative purposes only):
+Good names are one of the key requirements to make a code easy to maintain. Take a look at the two lines of code below:
 
 ~~~
 out(p(f(v), 2) + 1)
@@ -60,19 +36,33 @@ print(process(fibonacci(argument), 2) + 1)
 ~~~
 {: .language-python}
 
-There are common naming recommendations:
+Which one of the two is easiest to read and understand? It's much easier to upkeep a code where what happens on each line is clear **on that line**, without having to read comments describing what each variable actually is. When you have to go back to a function you wrote in a hurry six months ago to figure out where the bug is, you'd definitely prefer it was written like the latter.
 
-- Modules, components and classes are typically *nouns* (e.g. Molecule, BlackHole, DNASequence)
-- Functions and methods are typically *verbs* (e.g. spliceGeneSequence, calculateOrbit)
-- Boolean functions and methods are typically expressed as *questions about properties* (e.g. isStable, running, containsAtom)
+There's some common naming recommendations:
+
+- Variables are usually lower case (e.g. speed, participant_age)
+- Classes are typically capitalised *nouns* (e.g. Molecule, BlackHole, DNASequence)
+- Functions are typically *verbs* (e.g. splice_gene_sequence, calculateOrbit)
+
+Whilst these names are a lot longer than `a` or `val_x`, text editors like **Visual Studio Code** offers code completion. You can start typing <kbd>p</kbd> and be prompted with your variable `patient_id`. Not only does this mean it's no more difficult to write easily-maintainable code, it also helps avoid you making typos! If your variables are `f`, `g` and `v`, a single mispressed key can cause you a world of trouble.
+
+> ## Naming Styles
+> 
+> There's two main styles of naming multi-word variables, **camelCase** and **snake_case**. Some languages have common *standards* which recommend which to use, but in general it's good to be consistent whichever you pick!
+>
+> Python recommends **CamelCase** for classes and **snake_case()** for functions and variables.
+{: .callout}
 
 
 ## Documenting your Code
 
+If your code has descriptive variables and function names, then it should go a long way towards making it clear what it does. But unfortunately, codes of any real size rapidly become too complicated to understand just by reading the code! Even if your code doesn't *start* that large, **it will almost certainly end up that way**. So it's a good idea to write clear documentation from the start, to make sure you don't have to go back and do it later.
+
 ### Comments
 
-Source code tells the reader what the code does. Comments allow us to provide the reader with additional information - it's always a good idea to keep others in mind when writing code. As a reminder, you can add a comment using the `#` symbol on a line:
+If you've used clear variable names, then the actual logic and processes of the code should be readable from the text. So with comments, we can describe things in more detail- explaining what's going on at a high level, so you don't have to read an entire function to understand what it does.
 
+In Python, you can comment your code by starting a line with a `#`:
 ~~~
 def fahr_to_cels(fahr):
     # Convert temperature in Fahrenheit to Celsius
@@ -85,40 +75,39 @@ You can also add these at the end of lines, e.g.:
 
 ~~~
 def fahr_to_cels(fahr):
-    cels = (fahr + 32) * (5 / 9) # Convert temperature in Fahrenheit to Celsius
+    cels = (fahr + 32) * (5 / 9)  # Convert temperature in Fahrenheit to Celsius
     return cels
 ~~~
 {: .language-python}
 
-Python doesn't have any multi-line comments, like you may have seen in other languages like C++ or Java. However, there
- are ways to do it using *docstrings*, which are recommended in certain cases, as we'll see in a moment.
-
 A good rule of thumb is to assume that someone will **always** read your code at a later date, and this includes a future version of yourself. It can be easy to forget why you did something a particular way in six months time.
 
-The reader should be able to understand a single function or method from its code and its comments, and should not have to look elsewhere in the code for clarification. It can be easy to get lost in code, and others will not have the same knowledge of our project or code as we do.
+They should be able to understand a single function or method from its code and its comments, and shouldn't have to look elsewhere in the code for clarification. It can be easy to get lost in code, and others will not have the same knowledge of our project or code as we do.
 
 The kind of things that need to be commented are:
 
 - Why certain design or implementation decisions were adopted, especially in cases where the decision may seem counter-intuitive
-- The names of any algorithms or design patterns that have been implemented
-- The expected format of input files or database schemas
+- The names of any particular equations you've implemented or algorithms you've used
+- The format of input or output files the code uses
 
-There are some restrictions. Comments that simply restate what the code does are redundant, and comments must be
- accurate, because an incorrect comment causes more confusion than no comment at all.
+There are some restrictions. Comments that simply restate what the code does are redundant, and comments have to be accurate, as an incorrect comment is more confusing than no comment at all.
 
 ### Docstrings
 
-If the first thing in a function is a string that isn't assigned to a variable, that string is attached to the function as its documentation. Take a look at this function for calculating Fibonacci numbers:
+For your functions, it can be incredibly helpful to have this documentation on what they do in a structured way. The key properties of a function are what it does, what arguments it takes, and what values it returns. If you have this information everywhere, then when you're scanning through the code and come across a function, you can just hop over and check out the summary and you'll know exactly what's going on.
+
+We're going to look at an example of how to do this in Python. If the first thing in a function is a string that isn't assigned to a variable, that string is attached to the function as its documentation. Take a look at the example in this function for calculating Fibonacci numbers:
 
 ~~~
 def fibonacci(n):
-    """Calculate the Fibonacci number of the given integer.
+    """
+    Calculate the Fibonacci number of the given integer.
 
     A recursive implementation of Fibonacci.
 
     :param n: integer
     :raises ValueError: raised if n is less than zero
-    :returns: fibonacci number
+    :returns: fibonacci number, integer
     """
     if n < 0:
         raise ValueError('Fibonacci is not defined for N < 0')
@@ -131,25 +120,17 @@ def fibonacci(n):
 ~~~
 {: .language-python}
 
-Note here we are also explicitly documenting our input variables, what is returned by the function, and also when the `ValueError` exception is raised. Along with a helpful description of what the function does, this information can act as a *contract* for readers to understand what to expect in terms of behaviour when using the function, as well as how to use it.
+This documentation lists the input variables, what the function returns, and any errors it might raise too. Along with a helpful description of what the function does, this information can act as a *contract* for readers to understand what to expect in terms of behaviour when using the function, as well as how to use it.
 
-A comment string like this is called a *docstring*. We don't need to use triple quotes when we write one, but if we do, we can break the string across multiple lines. This also applies to Python modules, which are essentially files of Python functions, and methods within classes.
+This kind of clear, firm description of a function provides a solid basis for future devlopment. If you write a function that can only take positive numbers, but don't document that, then someone else might try and feed it negative numbers without realising that's not possible. Then, they'll be faced with a crash at best, or at worst the code will quietly give them the wrong answer.
 
-> ## Python PEP 257 - recommendations for docstrings
->
-> Python Enhancement Proposals (PEP for short) are design documents for the Python community, typically specifications or conventions for how to do something in Python, a description of a new feature in Python, etc. PEP 257 deals with docstring conventions to standardise how they are used. In PEP 257, for example, on the subject of module-level docstrings:
->
-> ~~~
-> The docstring for a module should generally list the classes, exceptions and functions (and any other objects) that are exported by the module, with a one-line summary of each. (These summaries generally give less detail than the summary line in the object's docstring.) The docstring for a package (i.e., the docstring of the package's __init__.py module) should also list the modules and subpackages exported by the package.
-> ~~~
->
-> There are many other PEPs, and we'll be looking into another of these which defines conventions for Python coding style later.
-{: .callout}
+In python, these types of comments are called *docstrings*. We don't need to use triple quotes when we write one, but if we do, we can break the string across multiple lines. 
 
-So at the beginning of a module file we can just add a docstring explaining the nature of a module. For example, if `fibonacci()` was included in a module with other functions, our module could have at the start of it:
+You can also write docstrings for entire Python modules- the community standard **PEP 257** suggests each Python module should have a brief description, and then list the classes and functions within it. So at the beginning of a file we can just add a docstring explaining what is it, and what it contains. For example, if `fibonacci()` was included in a module with other functions, our module could have at the start of it:
 
 ~~~
-"""A module for generating numerical sequences of numbers that occur in nature.
+"""
+A module for generating numerical sequences of numbers that occur in nature.
 
 Functions:
   fibonacci - returns the Fibonacci number for a given integer
@@ -160,20 +141,20 @@ Functions:
 ~~~
 {: .language-python}
 
-We'll be revisiting module-level docstrings later.
+There's a number of different docstring formats:
 
-A number of different docstring formats exist:
-
-- reST - based on reStructuredText. This is probably more prevalent nowadays, and is used by default in PyCharm
+- reST - based on reStructuredText, is the most common at the moment
 - Epytext - historically based on a format of docstrings used for Java, in their javadoc documentation
 - Google - they have their own format
 - numpydoc - recommended by Numpy, based on the Google format, quite verbose
 
 The format we're using here for our examples is reST.
 
+Not only does structured documentation in the form of docstrings or their equivalents in another language make development easier, there's also sites (like [ReadTheDocs](https://readthedocs.io)) that can compile your code comments into a searchable website. You can even hyperlink between functions, or use add-ons to include LaTeX equations into the site.
+
 > ## Improved Commenting for our Temperature Functions
 >
-> ??? UPDATE
+> Let's think about some example functions:
 >
 > ~~~
 > def fahr_to_cels(fahr):
@@ -189,12 +170,20 @@ The format we're using here for our examples is reST.
 > ~~~
 > {: .language-python}
 >
-> Open the up in a text editor and turn each of the comments into Python docstrings that explain briefly what the function does, its arguments, and what the function returns.
+> Open up **Visual Studio Code** and create a new file called `temperature_conversion.py`, then paste the example functions in and save it. Then turn each of the comments into Python docstrings that explain briefly what the function does, its arguments, and what the function returns, and add a docstring to the module that describes it.
 >
 > > ## Solution
 > > ~~~
+> > """
+> > A module for converting temperatures between imperial and metric.
+> >
+> > Functions:
+> >   fahr_to_celcius - Converts a float temperature in Fahrenheit to Celcius
+> >   fahr_to_kelvin - Converts a float temperature in Fahrenheit to Kelvin
+> > """
 > > def fahr_to_celsius(fahr):
-> >     """Convert Fahrenheit to Celsius.
+> >     """
+> >     Convert Fahrenheit to Celsius.
 > >
 > >     Uses standard Fahrenheit to Celsius formula.
 > >
@@ -205,7 +194,8 @@ The format we're using here for our examples is reST.
 > >     return celsius
 > >
 > > def fahr_to_kelvin(fahr):
-> >     """Convert Fahrenheight to Kelvin.
+> >     """
+> >     Convert Fahrenheight to Kelvin.
 > >
 > >     Uses standard Fahrenheit to Kelvin formula, making use of fahr_to_celsius function.
 > >
@@ -218,19 +208,5 @@ The format we're using here for our examples is reST.
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
-
-> ## Improving our Managing Academics and Data Analysis Codes
->
-> After writing code and getting it to work, it's a good habit to reflect on what you've written and see if it's readability/maintainability can be improved.
-> See if you can improve your Managing Academics code you wrote earlier in the week, and your Numpy/Matplotlib code, by doing the following:
->
-> - Rename your variables, functions, and methods to be more descriptive appropriate to their context.
-> - Add comments and docstrings to describe behaviour.
->
-> A reference implementation of the previous Managing Academic code example can be found in the `code` directory, so feel free to use and amend these if you prefer.
-{: .challenge}
-
-Commenting and adding docstrings to code is important to describe how our code behaves. Another approach to improve the readability and understandability of our code is *refactoring*, a process where we change the code itself, which we've touched on with renaming. There are other ways we can refactor our code by addressing issues with control flow and modularity, which we'll look at later.
-
 
 {% include links.md %}

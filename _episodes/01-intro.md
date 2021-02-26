@@ -15,11 +15,13 @@ Developing academic software can be an unusual exercise, especially compared to 
 
 Unlike in traditional development, the software itself often isn't the end goal- it's the *papers* it enables that are. This can lead to the focus being on how to get the results needed for the latest paper, without considering how this works in the long run. As a result, a large proportion of academic software is **paperware**- ad-hoc, poorly-written code made without any real plans, where all the information on how it works and how to run it is undocumented.
 
-This usually means the code is harder for you to develop later! 
+This usually means the code is harder for you to develop later, and hard for you to get collaborators on board to develop and/or use it. In the worst case, mismanaged software development can result in you having to rewrite from scratch. Given how much effort it takes to produce scientific software, this can be a huge waste of your time and effort! 
 
-## Software Sustainability
+## Sustainable Software
 
-One key part of developing academic software is ensuring it's **sustainable**. Organisations like the [Software Sustainability Institute](https://software.ac.uk/)
+One key part of developing academic software is ensuring it's **sustainable**. Organisations like the [Software Sustainability Institute](https://software.ac.uk/) have 
+
+???
 
 
 ## Single User-Developer Projects
@@ -36,7 +38,7 @@ So as a result a lot of project management features that are designed to work as
 
 > ## The Bus Factor
 > 
-> One other reason it's important to document how your code is developed, managed and used is to get your **Bus Factor** up. The bus factor describes the number of developers who have to be hit by a bus for a project to be impossible to continue! For *a very large percentage* of academic software projects, the bus factor is 1.
+> One other reason it's important to document how your code is developed, managed and used is to get your **Bus Factor** up. The bus factor describes the number of developers who have to be hit by a bus for a project to be impossible to continue. For *a very large percentage* of academic software projects, the bus factor is 1...
 >
 > Even if you aren't hit by a bus, accident, illness, family emergencies or other unplanned events (like global pandemics) can prevent you working on a project for a while. Fortunately, if you've documented your code, goals and the current status of your project collaborators can pick it up and get the results required for a referee response or conference presentation!
 {: .callout}
