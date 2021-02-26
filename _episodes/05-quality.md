@@ -5,16 +5,16 @@ exercises: 5
 questions:
 - "How do I write code to make future development easier?"
 objectives:
-- "Explain the benefits of making your code more readable."
-- "Rename variables, functions and methods to be more descriptive."
-- "Use comments to describe code behaviour where needed."
-- "Use docstrings to specifically describe the behaviour functions, methods, and modules."
+- "Understand the benefits of making your code more readable."
+- "Rename variables and functions to be more descriptive."
+- "Understand how to use comments to describe the code."
+- "Use docstrings to describe the inputs and outputs of functions."
 keypoints:
 - "Always assume that someone else will read your code at a later date, including yourself."
-- "Rename variables, functions and methods to add context to make your code more readable."
+- "Rename variables and functions to add context to make your code more readable."
 - "Add comments to explain why something was done in a certain way if not obvious."
-- "Refrain from adding code comments that just restate what code clearly already does."
-- "Use docstrings contained within `\"\"\"` at the start of functions, methods and modules to explain behaviour and input/output parameters."
+- "Don't add comments that just restate what code clearly already does."
+- "Use docstrings contained within `\"\"\"` at the start of functions and files to explain their behaviour and input/output parameters."
 ---
 
 Now we've covered the process around developing and releasing our software. However, one key part of software development we haven't touched on yet is **the code itself**. No matter how well we manage our development, if we don't write **sustainable** code, then our project will suffer. 
@@ -50,7 +50,7 @@ Whilst these names are a lot longer than `a` or `val_x`, text editors like **Vis
 > 
 > There's two main styles of naming multi-word variables, **camelCase** and **snake_case**. Some languages have common *standards* which recommend which to use, but in general it's good to be consistent whichever you pick!
 >
-> Python recommends **CamelCase** for classes and **snake_case()** for functions and variables.
+> Python recommends **capitalised CamelCase** for classes and **lower-case snake_case()** for functions and variables.
 {: .callout}
 
 
@@ -124,7 +124,7 @@ This documentation lists the input variables, what the function returns, and any
 
 This kind of clear, firm description of a function provides a solid basis for future devlopment. If you write a function that can only take positive numbers, but don't document that, then someone else might try and feed it negative numbers without realising that's not possible. Then, they'll be faced with a crash at best, or at worst the code will quietly give them the wrong answer.
 
-In python, these types of comments are called *docstrings*. We don't need to use triple quotes when we write one, but if we do, we can break the string across multiple lines. 
+These types of comments are called *docstrings* in Python. We don't need to use triple quotes when we write one, but if we do, we can break the string across multiple lines. 
 
 You can also write docstrings for entire Python modules- the community standard **PEP 257** suggests each Python module should have a brief description, and then list the classes and functions within it. So at the beginning of a file we can just add a docstring explaining what is it, and what it contains. For example, if `fibonacci()` was included in a module with other functions, our module could have at the start of it:
 
@@ -148,9 +148,9 @@ There's a number of different docstring formats:
 - Google - they have their own format
 - numpydoc - recommended by Numpy, based on the Google format, quite verbose
 
-The format we're using here for our examples is reST.
+The format we're using here for our examples is reST. The various formats differ in terms of how they format things like parameters and output values.
 
-Not only does structured documentation in the form of docstrings or their equivalents in another language make development easier, there's also sites (like [ReadTheDocs](https://readthedocs.io)) that can compile your code comments into a searchable website. You can even hyperlink between functions, or use add-ons to include LaTeX equations into the site.
+Not only does having well-structured docstrings (or their equivalents in another language) make development easier for you, if you stick to an existing format for them then they can be **machine-readable** too. That allows sites (like [ReadTheDocs (linked here)](https://readthedocs.io)) to compile your code comments into a searchable website. You can even hyperlink between functions, or use add-ons to include LaTeX equations into the site (look at the [Dask Documentation (linked here)](https://docs.dask.org/en/latest/dataframe-api.html#dask.dataframe.read_csv) for an example of a large, sophisticated site built by ReadTheDocs).
 
 > ## Improved Commenting for our Temperature Functions
 >
@@ -170,7 +170,7 @@ Not only does structured documentation in the form of docstrings or their equiva
 > ~~~
 > {: .language-python}
 >
-> Open up **Visual Studio Code** and create a new file called `temperature_conversion.py`, then paste the example functions in and save it. Then turn each of the comments into Python docstrings that explain briefly what the function does, its arguments, and what the function returns, and add a docstring to the module that describes it.
+> Open up **Visual Studio Code** and create a new file called `temperature_conversion.py`, then paste the example functions in and save it. Then turn each of the comments into Python docstrings that explain briefly what the function does, its arguments, and what the function returns. Finally, add a docstring to the top of the file that describes it.
 >
 > > ## Solution
 > > ~~~
@@ -195,7 +195,7 @@ Not only does structured documentation in the form of docstrings or their equiva
 > >
 > > def fahr_to_kelvin(fahr):
 > >     """
-> >     Convert Fahrenheight to Kelvin.
+> >     Convert Fahrenheit to Kelvin.
 > >
 > >     Uses standard Fahrenheit to Kelvin formula, making use of fahr_to_celsius function.
 > >
@@ -208,5 +208,17 @@ Not only does structured documentation in the form of docstrings or their equiva
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
+
+> ## Help
+>
+> For languages like Python, docstrings are useful as they're what's displayed when you use `help` to get more information about a function.
+> 
+> If you have Python installed, you can test this by opening up a terminal wherever you saved the `temperature_conversion.py` file, and trying:
+> ~~~
+> from temperature_conversion import fahr_to_celcius
+> help(fahr_to_celcius)
+> ~~~
+> {: .language-python}
+{: .callout}
 
 {% include links.md %}

@@ -13,7 +13,7 @@ keypoints:
 - "Stable versions of the code can be published as releases."
 ---
 
-Now we've got a quick outline of what sustainable code looks like, and how we can manage our development, let's put that knowledge into practise.
+Now we've seen all the steps involved in developing sustainable code, let's put that knowledge into practise.
 
 > ## Identifying issues
 >
@@ -45,7 +45,7 @@ Now we've got a quick outline of what sustainable code looks like, and how we ca
 
 > ## Solving problems
 > 
-> Now we've got a project board with all our problems in the To Do column, we can set about fixing it.
+> Now we've got a project board with all our problems in the To Do column, we can set about fixing one of the issues.
 > 
 > We want to use the feature-branch workflow, so it would be easy to collaborate with other people. Pick one of your open issues, and fix it using the feature-branch workflow, then once it's done issue a release of your updated `master` branch!
 >
@@ -64,5 +64,7 @@ Now we've got a quick outline of what sustainable code looks like, and how we ca
 > > Normally, we wouldn't just merge a branch into `dev` then `dev` straight into `master`- we'd merge several fixes or new features into `dev`, then merge to `master` and make a release. 
 > {: .solution}
 {: .challenge}
+
+Now you should have a good idea of the skills and techniques required to manage a project successfully!
 
 {% include links.md %}

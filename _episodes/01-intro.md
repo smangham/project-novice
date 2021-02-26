@@ -5,10 +5,11 @@ exercises: 0
 questions:
 - "Why should I manage my software development?"
 objectives:
-- "Explain why academic software development require management."
+- "Explain why academic software development requires management."
 keypoints:
-- "You are a user of your own code."
+- "Well-made software is easier to expand and reuse"
 - "You need to produce reproducible research."
+- "You are a user of your own code."
 ---
 
 Developing academic software can be an unusual exercise, especially compared to traditional software development. 
@@ -46,6 +47,6 @@ So as a result a lot of project management features that are designed to work as
 
 ## Project Management Tools
 
-Fortunately, a lot of tools exist to help manage the development of your academic software. You should already be familiar with GitHub, already a great tool for keeping track of how your code evolves and sharing it with users and collaborators. GitHub and other repository hosting sites (for example, GitLab) have a whole range of project management tools that we can use- and we're going to start with them.
+Fortunately, a lot of tools exist to help manage the development of your academic software. You should already be familiar with Git and GitHub, already a great way to keep track of how your code evolves and share it with others. GitHub and other repository hosting sites (for example, GitLab) have a whole range of project management tools that we can use- and we're going to start with them.
 
 {% include links.md %}

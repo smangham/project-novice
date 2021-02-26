@@ -34,11 +34,19 @@ We're going to assign this issue the label **Bug**, by clicking on the cogwheel 
 
 ![Issue details](../fig/02-issues/issues-details.png)
 
-The labels available for issues can be customised, and given a colour, allowing you to see at a glance from the Issues page the state of your code. The **Enhancement** label can be used to create issues that **request new features**, or if they are created by a developer, **indicate planned new features**. The **Bug** label makes the code much more usable, by allowing users to find out if anyone has had the same problem before, and how to fix (or work around) it on their end. Enabling users to solve their own problems can save you a lot of time and stress!
+The labels available for issues can be customised, and given a colour, allowing you to see at a glance from the Issues page the state of your code. The default labels include:
+
+* Bug
+* Documentation
+* Enhancement
+* Help Wanted
+* Question
+
+The **Enhancement** label can be used to create issues that **request new features**, or if they are created by a developer, **indicate planned new features**. The **Bug** label makes the code much more usable, by allowing users to find out if anyone has had the same problem before, and how to fix (or work around) it on their end. Enabling users to solve their own problems can save you a lot of time and stress!
 
 The **Enhancement** label is a great way to communicate your future priorities to your collaborators, and also your future self- it's far too easy to leave a software project for a few months to write a paper, then come back and have forgotten the improvements you were going to make. If you have other users for your code, they can use the label to request new features, or changes to the way the code operates. It's generally worth paying attention to these suggestions, especially if you spend more time developing than running the code. It can be very easy to end up with quirky behaviour because of off-the-cuff choices during development. Extra pairs of eyes can point out ways the code can be made more accessible, and the easier a code is to use, then the more widely it will be adopted and the greater its impact will be.
 
-Having open, publicly-visible lists of the the limitations and problems with your code is incredibly helpful. Even if some issues end up languishing unfixed for years, letting users know about them can save them a huge amount of work attempting to fix what turns out to be an unfixable problem on their end. 
+Having open, publicly-visible lists of the the limitations and problems with your code is incredibly helpful. Even if some issues end up languishing unfixed for years, letting users know about them can save them a huge amount of work attempting to fix what turns out to be an unfixable problem on their end. It can also help you see at a glance what state your code is in, making it easier to prioritise future work!
 
 > ## You Are A User
 >
@@ -76,7 +84,7 @@ As lots of bugs will have similar roots, GitHub lets you **reference one issue f
 
 If you realise that several of your bugs have common roots, or that one Enhancement can't be implemented before you've finished another, you can use the mention system to indicate which. This is a simple way to add much more information to your issues.
 
-You can also use the mention system to link **GitHub accounts**. Instead of <kbd>#</kbd>, typing <kbd>@</kbd> will bring up a list of accounts linked to the repository. Users will receive notifications when somebody else references them- you can use this to notify people when you want to check a detail with them, or let them know something has been fixed.
+You can also use the mention system to link **GitHub accounts**. Instead of <kbd>#</kbd>, typing <kbd>@</kbd> will bring up a list of accounts linked to the repository. Users will receive notifications when somebody else references them- you can use this to notify people when you want to check a detail with them, or let them know something has been fixed (much easier than writing out all the same information again in an email!).
 
 > ## Linking Issues
 > 
