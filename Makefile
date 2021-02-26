@@ -6,6 +6,8 @@ MAKEFILES=Makefile $(wildcard *.mk)
 JEKYLL=bundle config --local set path .vendor/bundle && bundle install && bundle update && bundle exec jekyll
 PARSER=bin/markdown_ast.rb
 DST=_site
+SLIDES_DIR=slides
+SLIDES_THEME=black
 
 # Check Python 3 is installed and determine if it's called via python3 or python
 # (https://stackoverflow.com/a/4933395)
@@ -41,11 +43,11 @@ endif
 ## =================================================
 
 ## * serve            : render website and run a local server
-serve : lesson-md
+serve : lesson-md lesson-slides
 	${JEKYLL} serve
 
 ## * site             : build website but do not run a server
-site : lesson-md
+site : lesson-md lesson-slides
 	${JEKYLL} build
 
 ## * docker-serve     : use Docker to serve the site
@@ -152,6 +154,19 @@ lesson-files :
 ## * lesson-fixme     : show FIXME markers embedded in source files
 lesson-fixme :
 	@grep --fixed-strings --word-regexp --line-number --no-messages FIXME ${MARKDOWN_SRC} || true
+
+## * lesson-slides    : build the slides
+lesson-slides: ${SLIDES_DIR}/index.html
+
+.PHONY: ${SLIDES_DIR}/index.html
+${SLIDES_DIR}/index.html: ${SLIDES_DIR}/index.md
+	@cd ${SLIDES_DIR}
+	pandoc -t revealjs -s -o $@ $< -V theme=${SLIDES_THEME} --slide-level=3
+	@cd ..
+
+.PHONY: variables
+variables:
+	@echo THEME: $(THEME)
 
 ##
 ## IV. Auxililary (plumbing) commands

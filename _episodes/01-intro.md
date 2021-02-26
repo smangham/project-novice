@@ -17,11 +17,12 @@ Unlike in traditional development, the software itself often isn't the end goal-
 
 This usually means the code is harder for you to develop later, and hard for you to get collaborators on board to develop and/or use it. In the worst case, mismanaged software development can result in you having to rewrite from scratch. Given how much effort it takes to produce scientific software, this can be a huge waste of your time and effort! 
 
-## Sustainable Software
 
-One key part of developing academic software is ensuring it's **sustainable**. Organisations like the [Software Sustainability Institute](https://software.ac.uk/) have 
+## Better Software, Better Research
 
-???
+One key reason to make sure you properly manage the developent of your academic software, even when the software is just a by-product of doing the science, is because **better software** makes **better research**. Organisations like the [Software Sustainability Institute](https://software.ac.uk/) exist to make this point.
+
+If you plan your project out clearly in advance, openly list your future goals and the limitations of your software, and write code that's consistent and designed to be easy-to-interpret, you'll find it to be much more **sustainable**. Sustainable software is easier to keep maintained, to expand to cover new problems, and to bring in new collaborators on. The benefits to your research from this will rapidly outweigh the time you spend on software project management.
 
 
 ## Single User-Developer Projects
