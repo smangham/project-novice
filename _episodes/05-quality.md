@@ -50,9 +50,18 @@ Whilst these names are a lot longer than `a` or `val_x`, text editors like **Vis
 > 
 > There's two main styles of naming multi-word variables, **camelCase** and **snake_case**. Some languages have common *standards* which recommend which to use, but in general it's good to be consistent whichever you pick!
 >
-> Python recommends **capitalised CamelCase** for classes and **lower-case snake_case()** for functions and variables.
+> Python recommends **capitalised CamelCase** for classes, **lower-case snake_case()** for functions and variables, and **upper-case SNAKE_CASE** for constants.
 {: .callout}
 
+> ## Single-Character Names
+>
+> You might think that some single-character names are perfectly clear- for example, `C` obviously refers to the speed of light!  Unfortunately, not everyone will agree. 
+> Any mathematical libraries you use are likely to have their own interpretation of what each letter should stand for that are likely to be at odds with your field's definitions.
+> If so, this can lead to some very inconvenient errors to debug.
+>
+> In general, it's best to give everything a name at least three characters long. You might use a prefix, e.g. `CONST_C` for 'constant', 
+> or a more verbose description, e.g. `V_LIGHT`.
+{: .callout}
 
 ## Documenting your Code
 

@@ -95,6 +95,24 @@ Once your project board has a large number of cards on it, you might want to beg
 > If your must-have features take longer than expected to implement, you have a pre-made list of what you can cut to complete the project on-time. If you have a relatively well-defined project that needs to be completed to a strict deadline, consider looking into MoSCoW.
 {: .callout}
 
+## Feature-branch workflows
+
+We discussed feature-branch workflows yesterday, and they're a key part of good project management.
+
+![Feature-branch workflow](../fig/03-boards/git-feature-branch.svg)
+
+There's some best practise associated with the workflow:
+
+* When adding a new feature, use a feature branch, and **test the feature in your feature branch**.
+* It's OK to commit broken, work-in-progress code to a feature branch as it's not expected to be 'finished' until you submit a pull request.
+* Once your feature is tested and it's ready to merge, submit a pull request to `dev`.
+* Don't commit broken, work-in-progress code to `dev`! If someone wants to make a new branch, or fix a bug, they'll be using `dev` as a base, so it needs to work fine.
+* Only pull from `dev` to `master` when you think `dev` is stable. This is the version people will be downloading to verify the results from your papers.
+
+In industry, there's normally strict testing criteria for when you merge in feature branches or merge `dev` into `master`. 
+That's a lot harder to apply in academia- in an experimental code, there is often no known ideal behaviour to test against,
+and you expect your code's output to change as you alter the equations and assumptions.
+
 
 ## Forks
 
