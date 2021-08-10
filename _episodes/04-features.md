@@ -62,6 +62,18 @@ Releases make it easy for others to reference a specific version of your code. H
 Zenodo has great integration with GitHub, allowing you to **automatically generate a DOI for any new releases on a repository**. GitHub provide a very clear guide on how to do this:
 [Citable code](https://guides.github.com/activities/citable-code/). Note, however, that Zenodo can only issue DOIs for **publicly-visible repositories**. This can be a problem if you need to keep your code private due to industrial collaborations.
 
+> ## Creating a DOI
+> 
+> Zenodo offers a 'sandbox', where you can test the process for creating a new DOI 
+> (as creating a DOI on their proper website is irreversible!).
+>
+> Go to [sandbox.zenodo.org](http://sandbox.zenodo.org), and create a DOI for your `climate-analysis` repository by registering it via Zenodo's GitHub link and creating a new release on GitHub. 
+>
+> > ## Solution
+> >
+> >
+> >
+{: .challenge}
 
 ## Software licensing
  
