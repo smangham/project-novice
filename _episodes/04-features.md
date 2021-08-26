@@ -87,13 +87,68 @@ Depending on how busy Zenodo is, this can take anything from minutes to hours to
 > There's one slightly annoying quirk with using Zenodo to generate DOIs;
 > you only get the DOI *after* creating the Release for a commit.
 >
-> This means you can't put the DOI for a commit in the `README.md` or a `CITATION.cff` file. Unfortunately, there's not really a good way around this! A work-in-progress project called [Zenodraft](https://github.com/zenodraft/zenodraft) is aiming to provide a solution by pre-reserving DOIs, and Zenodo say they are looking into the issue further.
+> This means you can't put the DOI for a commit in the `README.md` or a `CITATION.cff` file *for that commit*. Unfortunately, there's not really a good way around this! A work-in-progress project called [Zenodraft](https://github.com/zenodraft/zenodraft) is aiming to provide a solution by pre-reserving DOIs, and Zenodo say they are looking into the issue further.
 {: .callout}
 
 ### Citation Files
 
+You'll have noticed the Zenodo upload gives you a template `CITATION.cff` file. 
+This is a handy way of letting people who use your code know how you'd like to be cited. 
+[There's more detail on these files here](https://citation-file-format.github.io), 
+but one of the most important features is the ability to add your [ORCID](https://orcid.org), 
+to easily link you to your code in a way that's not dependent upon your university email address.
+You can also request users cite multiple DOIs - for example, the DOI of a commit, and one of a 
+release paper.
 
+GitHub now also supports `CITATION.cff` files. A repo with one will have a button informing users of
+how to cite it, and providing a pre-made BibTex citation.
 
+> ## Adding a CITATION.cff
+> Using the template from Zenodo, add a `CITATION.cff` file to your repository, then push it to GitHub.
+> > ## Solution
+> > **Contents of `CITATION.cff`:**
+> >```
+> >cff-version: 1.1.0
+> >message: "If you use this software, please cite it as below."
+> >authors:
+> >- family-names: Mangham
+> >  given-names: Sam
+> >  orcid: https://orcid.org/0000-0001-7511-5652
+> >- family-names: Crouch
+> >  given-names: Steven
+> >  orcid: https://orcid.org/0000-0001-8985-6814
+> >title: Climate Analysis Code
+> >version: 1.1
+> >doi: 10.5072/zenodo.896790
+> >date-released: 2021-08-26
+> >```
+> >```bash
+> >git add CITATION.cff
+> >git commit -m "Added citation instructions"
+> >```
+> >```output
+> >[master 88ed80d] Added citation instructions
+> > 1 file changed, 13 insertions(+)
+> > create mode 100644 CITATION.cff
+> >```
+> >```bash
+> >git push
+> >```
+> >```output
+> >Enumerating objects: 4, done.
+> >Counting objects: 100% (4/4), done.
+> >Delta compression using up to 4 threads
+> >Compressing objects: 100% (3/3), done.
+> >Writing objects: 100% (3/3), 510 bytes | 510.00 KiB/s, done.
+> >Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+> >remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+> >To github.com:smangham/climate-analysis.git
+> >   d596ad4..88ed80d  master -> master
+> >```
+> >Now, when we check on GitHub, there's a button that provides a BibTex (or APA) format citation for your code. 
+> >![Citation instructions](../fig/04-features/zenodo/github-cite.png)
+>{: .solution}
+{: .challenge}
 
 ## Software licensing
  
