@@ -62,18 +62,38 @@ Releases make it easy for others to reference a specific version of your code. H
 Zenodo has great integration with GitHub, allowing you to **automatically generate a DOI for any new releases on a repository**. GitHub provide a very clear guide on how to do this:
 [Citable code](https://guides.github.com/activities/citable-code/). Note, however, that Zenodo can only issue DOIs for **publicly-visible repositories**. This can be a problem if you need to keep your code private due to industrial collaborations.
 
-> ## Creating a DOI
-> 
-> Zenodo offers a 'sandbox', where you can test the process for creating a new DOI 
-> (as creating a DOI on their proper website is irreversible!).
+Zenodo offers a 'sandbox', where you can test the process for creating a new DOI (as creating a DOI on their proper website is irreversible!).
+We'll use the sandbox at [sandbox.zenodo.org](http://sandbox.zenodo.org)to create a DOI for our `climate-analysis` repository by registering it via Zenodo's GitHub link and creating a new release on GitHub. 
+
+First, making sure we're on [sandbox.zenodo.org](http://sandbox.zenodo.org), we need to sign up using our GitHub account - using **Log in** or **Sign up**, and and selecting **GitHub**.
+![Log-in button](../fig/04-features/zenodo/log-in.png)
+![Log-in via GitHub](../fig/04-features/zenodo/log-in-github.png)
+
+Once you've logged in, selecting **GitHub** from the drop-down menu
+opens a list of your repositories, and we can toggle them to 'on' to begin tracking releases on them.
+![Select GitHub](../fig/04-features/zenodo/linked.png)
+![Enable your repository](../fig/04-features/zenodo/enabled.png)
+
+Zenodo won't retroactively generate DOIs for releases, so we need to  **head back to GitHub**, and create a new release, then go back to **Zenodo** and click on our repository to see the status of our upload.
+![Create a release](../fig/04-features/zenodo/github.png)
+![Release processing](../fig/04-features/zenodo/release-working.png)
+
+Depending on how busy Zenodo is, this can take anything from minutes to hours to process. Once it's done, though, you get a DOI, which we can then edit into the message for our release.
+![Release processed](../fig/04-features/zenodo/release-finished.png)
+![Editing a release](../fig/04-features/zenodo/github-edited.png)
+
+> ## Chickens and Eggs
 >
-> Go to [sandbox.zenodo.org](http://sandbox.zenodo.org), and create a DOI for your `climate-analysis` repository by registering it via Zenodo's GitHub link and creating a new release on GitHub. 
+> There's one slightly annoying quirk with using Zenodo to generate DOIs;
+> you only get the DOI *after* creating the Release for a commit.
 >
-> > ## Solution
-> >
-> >
-> >
-{: .challenge}
+> This means you can't put the DOI for a commit in the `README.md` or a `CITATION.cff` file. Unfortunately, there's not really a good way around this! A work-in-progress project called [Zenodraft](https://github.com/zenodraft/zenodraft) is aiming to provide a solution by pre-reserving DOIs, and Zenodo say they are looking into the issue further.
+{: .callout}
+
+### Citation Files
+
+
+
 
 ## Software licensing
  
