@@ -1,5 +1,6 @@
 ---
 title: "Managing a Mini-Project"
+slug: project-novice-managing-a-mini-project
 teaching: 0
 exercises: 20
 questions:

@@ -1,5 +1,6 @@
 ---
 title: "Release Management"
+slug: project-novice-release-management
 teaching: 20
 exercises: 0
 questions:
