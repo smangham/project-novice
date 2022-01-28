@@ -1,5 +1,6 @@
 ---
 title: "Project Management"
+slug: project-novice-project-management
 teaching: 25
 exercises: 5
 questions:

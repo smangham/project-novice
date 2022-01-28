@@ -1,5 +1,6 @@
 ---
 title: "Writing Sustainable Code"
+slug: project-novice-writing-sustainable-code
 teaching: 20
 exercises: 5
 questions:

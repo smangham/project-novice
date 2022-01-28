@@ -1,5 +1,6 @@
 ---
 title: "Introduction"
+slug: project-novice-introduction
 teaching: 10
 exercises: 0
 questions:
