@@ -33,7 +33,7 @@ There's a lot of sites that host project boards. For non-software projects like 
 
 From the 'Project' tab on GitHub, we can start up a board with **Create a new project**. A repository can have multiple project boards on it- for example, if multiple PhD students have their own project working on a code, each can have a project board for their own changes, or you can create a new board for each paper.
 
-![Adding boards](../fig/03-boards/board-none.png)
+![Adding boards](fig/03-boards/board-none.png)
 
 First, we need to give our project a name, e.g. "Early development". Then, we can think about the columns.
 
@@ -47,11 +47,11 @@ Almost all styles of board have three 'basic' columns, with pretty self-explanat
 
 GitHub provides template boards that automatically have those columns- and more, it has **automated templates**. If you add a pull request to the board, it can automatically move it to 'Done' for you when you merge it. We're going to select the **Automated kanban template**, then **Create project**.
 
-![Adding board details](../fig/03-boards/board-details.png)
+![Adding board details](fig/03-boards/board-details.png)
 
 One common extra column is **On hold** or **Waiting**. If you have tasks that get held up by waiting on other people (e.g. to provide you with data or respond to your questions) then moving them to a separate column makes their current state clearer. We're going to add a **Waiting** column, and drag it in-between In Progress and Done.
 
-![Adding columns](../fig/03-boards/board-created.png)
+![Adding columns](fig/03-boards/board-created.png)
 
 ### Cards
 
@@ -59,11 +59,11 @@ One of the advantages of using GitHub or GitLab to host your project board is th
 
 You can create cards on the project board, or you can **import existing issues**. Let's add the issue we created last episode to the **To Do** column- click **Add card** and drag it over.
 
-![Adding existing issues](../fig/03-boards/board-issues.png)
+![Adding existing issues](fig/03-boards/board-issues.png)
 
 We can also create a card without an issue. The repo currently doesn't tell people how to use the code- it needs an example. So let's clear out the default cards GitHub adds using the **...** button and create a new one in **To Do** using the **+** button.
 
-![Adding new cards](../fig/03-boards/board-add.png)
+![Adding new cards](fig/03-boards/board-add.png)
 
 Notes can have detailed content like checklists, but that only goes so far. Later on you might want to convert the card to an issue so you can add labels or write detailed comments. Fortunately, you can use the **Convert to issue** option you just saw in the **...** menu. It's often a good idea as you can use the comments section on the issue to write everything you tried- and, importantly, everything that *failed* for future reference.
 
@@ -100,7 +100,7 @@ Once your project board has a large number of cards on it, you might want to beg
 
 We discussed feature-branch workflows yesterday, and they're a key part of good project management.
 
-![Feature-branch workflow](../fig/03-boards/git-feature-branch.svg)
+![Feature-branch workflow](fig/03-boards/git-feature-branch.svg)
 
 There's some best practise associated with the workflow:
 
@@ -123,11 +123,11 @@ For some large projects, or open-source projects, it's not practical to have all
 
 We're going to create a fork of an existing repository- `swc-rf4`. [Go to the repository on GitHub](https://github.com/Southampton-RSG/swc-rf4), and click **Fork**. You can fork a repository to your own account, or any **Team** you have access to. For now, we'll clone a personal copy.
 
-![Create a fork](../fig/04-features/fork-button.png)
+![Create a fork](fig/04-features/fork-button.png)
 
 As you can see, the fork looks and works just like a normal repository, but handily tells you how far you are behind the original.
 
-![Created fork](../fig/04-features/fork-made.png)
+![Created fork](fig/04-features/fork-made.png)
 
 You may also be able to use forks to create modified versions of existing codes that better suit your needs, depending on their software license. It is good practise to submit your modifications and improvements back to the original, though.
 
