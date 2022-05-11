@@ -18,9 +18,9 @@ Now we've seen all the steps involved in developing sustainable code, let's put 
 
 > ## Identifying issues
 >
-> Earlier, we made a fork of the `rf4` repository. The code there is pretty bad- it's written in a very unsustainable way that makes future development harder (and passing the project on to another researcher even harder!). However, as a published project owned by somebody else, we don't have the permissions required to edit it and fix the problems.
+> Earlier, we made a fork of the `project-novice-demo` repository. The code there is pretty bad- it's written in a very unsustainable way that makes future development harder (and passing the project on to another researcher even harder!). However, as a published project owned by somebody else, we don't have the permissions required to edit it and fix the problems.
 >
-> Fortunately, we have already forked it, and now we're going to set up a small project to improve it. Take a look at your fork of the `rf4` repository, identify three problems with the code, and raise them as issues. Forks don't have **Issues** by default, but you can enable them using **Settings -> Options -> Features**.
+> Fortunately, we have already forked it, and now we're going to set up a small project to improve it. Take a look at your fork of the `project-novice-demo` repository, identify three problems with the code, and raise them as issues. Forks don't have **Issues** by default, but you can enable them using **Settings -> Options -> Features**.
 >
 > Don't try to run the code- there's more than enough things wrong with it that you can spot just from a quick read-through.
 >

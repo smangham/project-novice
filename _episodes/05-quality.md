@@ -216,6 +216,7 @@ Not only does having well-structured docstrings (or their equivalents in another
 > >     return kelvin
 > > ~~~
 > > {: .language-python}
+> > This level of commenting is a bit overkill for our example code - but once you have a file that's a few hundred lines long this kind of quick and clear overview is very useful! 
 > {: .solution}
 {: .challenge}
 
