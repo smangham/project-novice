@@ -11,7 +11,7 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 
 > ## Prerequisites
 >
-> This workshop requires a basic knowledge of **Git** and **GitHub** to take part.
+> This lesson requires a basic knowledge of **Git** and **GitHub** to take part.
 > We use a demo repository - check the setup for instructions on how to set a copy up.
 >
 > **Python** is used as the example language throughout. No knowledge of **python** is required, and all tools and standards referenced have equivalents in other languages.

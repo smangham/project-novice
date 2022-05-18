@@ -121,7 +121,7 @@ and you expect your code's output to change as you alter the equations and assum
 
 For some large projects, or open-source projects, it's not practical to have all the collaborators working on the same repository. Multiple different developers might both create branches with the same name, leading to conflicts, and developers can end up with access to dozens of work-in-progress branches they don't know anything about. Others limit the ability of unauthorised users to push to the repository to prevent abuse, or accidental uploads of sensitive or restricted material. In these contexts, it makes more sense for **every collaborator to have their own fork**. Then, once they finish work on a feature branch, they can **submit a pull request back to the original**.
 
-We're going to create a fork of an existing repository- `swc-rf4`. [Go to the repository on GitHub](https://github.com/Southampton-RSG/swc-rf4), and click **Fork**. You can fork a repository to your own account, or any **Team** you have access to. For now, we'll clone a personal copy.
+We're going to create a fork of an existing repository - `project-novice-demo`. [Go to the repository on GitHub](https://github.com/Southampton-RSG-Training/project-novice-demo), and click **Fork**. You can fork a repository to your own account, or any **Team** you have access to. For now, we'll clone a personal copy.
 
 ![Create a fork](fig/04-features/fork-button.png)
 

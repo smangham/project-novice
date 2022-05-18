@@ -15,17 +15,34 @@ keypoints:
 - "Issues can reference other issues, and be referenced by commits."
 ---
 
-As a piece of software is used, then bugs will inevitably come to light- nothing is perfect! If you work on your code with collaborators, or have non-developer users, it can be helpful to have a single shared record of all the problems people have found with the code- not only to keep track of them for you to work on later, but to avoid the annoyance of people emailing you to report a bug that you already know about!
+As a piece of software is used, then bugs will inevitably come to light - nothing is perfect! If you work on your code with collaborators, or have non-developer users, it can be helpful to have a single shared record of all the problems people have found with the code- not only to keep track of them for you to work on later, but to avoid the annoyance of people emailing you to report a bug that you already know about!
 
 ## Issues
 
-GitHub provides a framework (as does GitLab!) for managing bug reports, feature requests, and lists of future work- **Issues**.
+GitHub provides a framework (as does GitLab!) for managing bug reports, feature requests, and lists of future work - **Issues**.
+
+As part of our setup we created a repository from the `climate-analysis` template, a mock repository for a code that analyses climate data files. 
+
+> ## Setup
+>
+> If you haven't got a copy of it, [go to this link](https://github.com/Southampton-RSG-Training/project-novice-climate-analysis/generate) and create a new repository on your account called `climate-analysis`. If you've already got a `climate-analysis` repository from completing earlier training with us, then you can use that one!
+{: .callout}
 
 Go back to the home page for your `climate-analysis` repository, and click on the Issues tab. You should see a page listing the open issues on your repository, currently none.
 
 ![Issue screen](fig/02-issues/issues-none.png)
 
-We're going to create a new issue, raising the problem that the functions to convert between inches and milimeters don't work in our code.
+If we look at the `rainfall_converison.py` file in our repository, we can see that it has a couple of comments that describe work that needs to be done (sometimes called *"To Do notes"*):
+
+{: .python}
+~~~
+# TODO: Add function inches_to_m
+# TODO: Add function inches_to_cm
+~~~
+
+This is an easy way to record information about your code, but it's not very accessible - you can't find what the problems and limitations of it are without going through and reading all the code yourself. 
+
+To make it more accessible, we're going to create a new issue, raising the problem that the functions to convert between inches and milimeters don't work in our code.
 
 ![Creating a new issue](fig/02-issues/issues-new.png)
 
@@ -46,6 +63,11 @@ The labels available for issues can be customised, and given a colour, allowing 
 The **Enhancement** label can be used to create issues that **request new features**, or if they are created by a developer, **indicate planned new features**. The **Bug** label makes the code much more usable, by allowing users to find out if anyone has had the same problem before, and how to fix (or work around) it on their end. Enabling users to solve their own problems can save you a lot of time and stress!
 
 The **Enhancement** label is a great way to communicate your future priorities to your collaborators, and also your future self- it's far too easy to leave a software project for a few months to write a paper, then come back and have forgotten the improvements you were going to make. If you have other users for your code, they can use the label to request new features, or changes to the way the code operates. It's generally worth paying attention to these suggestions, especially if you spend more time developing than running the code. It can be very easy to end up with quirky behaviour because of off-the-cuff choices during development. Extra pairs of eyes can point out ways the code can be made more accessible, and the easier a code is to use, then the more widely it will be adopted and the greater its impact will be.
+
+> ## Bug or Enhancement
+>
+> Is the issue we just added really a bug? In this case we could call it an Enhancement - it depends on whether we think this is missing functionality that *should* be there (a bug), or new functionality we want to add to an existing code. If it doesn't suit either, we could just leave it unlabelled - labels just exist to make things clearer after all.
+{: .callout}
 
 Having open, publicly-visible lists of the the limitations and problems with your code is incredibly helpful. Even if some issues end up languishing unfixed for years, letting users know about them can save them a huge amount of work attempting to fix what turns out to be an unfixable problem on their end. It can also help you see at a glance what state your code is in, making it easier to prioritise future work!
 
@@ -92,6 +114,16 @@ You can also use the mention system to link **GitHub accounts**. Instead of <kbd
 > Whilst we've documented that `inches_to_cm` is missing, `inches_to_m` is still missing too. Try to raise a new issue, labelled as a bug, that mentions your previous issue and links to your GitHub account to reference that you are going to be handling it as both are similar.
 >
 > Then, check out the first issue you raised and see if anything has happened.
+>
+> ## Solution
+> >
+> > You should get a pop-up box looking like this when you enter the <kbd>#</kbd> key:
+> > 
+> > ![Issue linking dropdown](fig/02-issues/challenge-issue-dropdown.png) 
+> > 
+> > Once you've selected the existing issue, and created your new one, you'll get a link to the previous one:
+> > 
+> > ![Issue linked](fig/02-issues/challenge-issue-link.png) 
 {: .challenge}
 
 ### Commits
