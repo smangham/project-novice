@@ -23,20 +23,23 @@ Developing academic software is a project, and most projects (software and *non*
 
 ## Project boards
 
-A **project board** (or **kanban board**, from the japanese for a card) is a tool for keeping track of all the different components of a project, and what their current status is. They do this using **columns** and **cards**- you break your project down into tasks which you write on **cards**, then move them between **columns** that describe the status of each task. Cards are usually small, descriptive and self-contained tasks that build on each other- think "Add reader for .csv files" instead of "Get input working". Breaking a project down into clearly-defined tasks makes it a lot easier.
+A **project board** (or **kanban board**, from the japanese for a card) is a tool for keeping track of all the different components of a project, and what their current status is. They do this using **columns** and **cards** - you break your project down into tasks which you write on **cards**, then move them between **columns** that describe the status of each task. Cards are usually small, descriptive and self-contained tasks that build on each other - think "Add reader for .csv files" instead of "Get input working". Breaking a project down into clearly-defined tasks makes it a lot easier.
 
-In industry, they often use formal project management styles for their boards with specific columns and usages, but we're going to use a simple, flexible format- not least because the more complicated your project board gets, the harder it is for you to get your collaborators to use it...
+In industry, they often use formal project management styles for their boards with specific columns and usages, but we're going to use a simple, flexible format - not least because the more complicated your project board gets, the harder it is for you to get your collaborators to use it...
 
 ### To GitHub
 
 There's a lot of sites that host project boards. For non-software projects like thesis-writing or organising conferences, you might use [Trello](https://trello.com), but repository hosting sites like GitHub and GitLab have built-in project boards that interact with the other features of the site, so we're going to use them (though other tools like [Jira](https://www.atlassian.com/software/jira) also offer this functionality). This episode will use GitHub as an example, but GitLab has almost identical functionality. 
 
-From the 'Project' tab on GitHub, we can start up a board with **Create a new project**. A repository can have multiple project boards on it- for example, if multiple PhD students have their own project working on a code, each can have a project board for their own changes, or you can create a new board for each paper.
+First, we'll go to our repository's **Project** tab. GitHub offers two types of project - we'll be using the classic one, that's linked to the repository. Select the 'Project' (not beta!) tab:
+
+![Adding boards](fig/03-boards/board-tab.png)
+
+Then from there, click **Create a new project**. A repository can have multiple project boards on it - for example, if multiple PhD students have their own project working on a code, each can have a project board for their own changes, or you can create a new board for each paper.
 
 ![Adding boards](fig/03-boards/board-none.png)
 
 First, we need to give our project a name, e.g. "Early development". Then, we can think about the columns.
-
 
 ### Columns
 
@@ -49,21 +52,25 @@ GitHub provides template boards that automatically have those columns- and more,
 
 ![Adding board details](fig/03-boards/board-details.png)
 
-One common extra column is **On hold** or **Waiting**. If you have tasks that get held up by waiting on other people (e.g. to provide you with data or respond to your questions) then moving them to a separate column makes their current state clearer. We're going to add a **Waiting** column, and drag it in-between In Progress and Done.
+One common extra column is **On hold** or **Waiting**. If you have tasks that get held up by waiting on other people (e.g. to provide you with data or respond to your questions) then moving them to a separate column makes their current state clearer. We're going to add a **Waiting** column, and drag it in-between In Progress and Done (you might have to scroll over a bit to see the **Add column** button!):
 
-![Adding columns](fig/03-boards/board-created.png)
+![Adding columns](fig/03-boards/board-column-add.png)
+
+Now we've got our board fully set up:
+
+![Board fully set up](fig/03-boards/board-created.png)
 
 ### Cards
 
 One of the advantages of using GitHub or GitLab to host your project board is the integration with **issues**. You can easily add issues to your project board, to keep track of how they're progressing.
 
-You can create cards on the project board, or you can **import existing issues**. Let's add the issue we created last episode to the **To Do** column- click **Add card** and drag it over.
+You can create cards on the project board, or you can **import existing issues**. Let's add the issue we created last episode to the **To Do** column - click **Add card** and drag it over.
 
 ![Adding existing issues](fig/03-boards/board-issues.png)
 
 We can also create a card without an issue. The repo currently doesn't tell people how to use the code- it needs an example. So let's clear out the default cards GitHub adds using the **...** button and create a new one in **To Do** using the **+** button.
 
-![Adding new cards](fig/03-boards/board-add.png)
+![Deleting old cards](fig/03-boards/card-delete.png) ![Adding new cards](fig/03-boards/board-add.png)
 
 Notes can have detailed content like checklists, but that only goes so far. Later on you might want to convert the card to an issue so you can add labels or write detailed comments. Fortunately, you can use the **Convert to issue** option you just saw in the **...** menu. It's often a good idea as you can use the comments section on the issue to write everything you tried- and, importantly, everything that *failed* for future reference.
 
@@ -74,6 +81,15 @@ Our project board is looking a little thin, but for an example full one check ou
 > ## Labelling
 > 
 > You can see that your issue card has a 'bug' label, but the one you made has no labels. Convert your new card to an issue, and add the **Documentation** label to it.
+>
+> > ## Solution
+> >
+> > We convert the card to an issue, and add a quick description:
+> > ![Convert card to issue](fig/03-boards/card-to-issue.png)
+> > ![Convert card to issue](fig/03-boards/card-to-issue-detail.png)
+> > Once we've made the issue, we can follow the link to see it and add the **Documentation** label. It'll show us that the issue is linked to our project board as well:
+> > ![Convert card to issue](fig/03-boards/card-to-issue-label.png)
+> {: .solution}
 {: .challenge}
 
 ### Prioritisation
@@ -98,9 +114,37 @@ Once your project board has a large number of cards on it, you might want to beg
 
 ## Feature-branch workflows
 
-We discussed feature-branch workflows yesterday, and they're a key part of good project management.
+The **Feature-branch workflow** is a common way of structuring how you develop your code using version control, that sites like GitHub make easy to apply.
+
+> ## I Know This
+> If you've attended some previous training that's covered feature-branch workflows, feel free to skip to the 'Best Practise' subsection!
+{: .callout}
+
+In the feature-branch workflow, you make use of the ease of creating new 'branches' with Git, parallel versions of your code that you can modify independently and easily merge back together.
 
 ![Feature-branch workflow](fig/03-boards/git-feature-branch.svg)
+
+You have a `master`/`main` branch, that contains the stable version of the code you want to share with other people, and a `dev`/`develop` branch that holds the work-in-progress version of your code. When you have a version of your code that you're going to use to generate results for a paper, or want to share with collaborators, then you can create a **Pull request** to merge the `dev` branch into `master`. We can go to our repository's **Pull requests** tab, and click **New pull request**:
+
+![Feature-branch workflow](fig/03-boards/pull-request.png)
+
+Then select the branches we want merged:
+
+![Feature-branch workflow](fig/03-boards/pull-request-make.png)
+
+Now we've got a stable version of the code on the `master` branch that we can share with others, whilst we continue development independently.
+
+> ## Whoops
+> You won't be able to do this bit yourself - I forgot to ask you to check 'Copy all branches' during the template set-up step! This will be fixed in future versions of the material. For now, you can just read it.
+{: .warning}
+
+We can take this one step further - and create new 'feature' branches for each bug we want to address and feature we want to add. Ideally, when we raise an **issue**, if it can't be done in one commit and a few hours of work to fix and test we want to create a new **feature branch**, coming off of our `dev` branch, in which we work on it. 
+
+This makes it easy to work on multiple things at once - even if we're half-way through adding a new feature on one branch, we can deal with a bug that a colleague has run into by creating a new branch coming off of `dev`, fixing the bug in that branch, and then doing a pull request to merge the fixes back into `dev`. If we weren't using the feature-branch method and were working directly on `dev`, we'd have to finish and test our work on adding a new feature before we could fix the bug!
+
+With the feature-branch workflow we can easily add new developers to our collaboration, and test new features in isolation to avoid confounding effects.
+
+### Best Practise 
 
 There's some best practise associated with the workflow:
 
@@ -111,7 +155,7 @@ There's some best practise associated with the workflow:
 * Only pull from `dev` to `master` when you think `dev` is stable. This is the version people will be downloading to verify the results from your papers.
 
 In industry, there's normally strict testing criteria for when you merge in feature branches or merge `dev` into `master`. 
-That's a lot harder to apply in academia- in an experimental code, there is often no known ideal behaviour to test against,
+That's a lot harder to apply in academia - in an experimental code, there is often no known ideal behaviour to test against,
 and you expect your code's output to change as you alter the equations and assumptions.
 
 

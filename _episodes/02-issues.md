@@ -15,24 +15,24 @@ keypoints:
 - "Issues can reference other issues, and be referenced by commits."
 ---
 
-As a piece of software is used, then bugs will inevitably come to light - nothing is perfect! If you work on your code with collaborators, or have non-developer users, it can be helpful to have a single shared record of all the problems people have found with the code- not only to keep track of them for you to work on later, but to avoid the annoyance of people emailing you to report a bug that you already know about!
+As a piece of software is used, then bugs will inevitably come to light - nothing is perfect! If you work on your code with collaborators, or have non-developer users, it can be helpful to have a single shared record of all the problems people have found with the code - not only to keep track of them for you to work on later, but to avoid the annoyance of people emailing you to report a bug that you already know about!
 
 ## Issues
 
-GitHub provides a framework (as does GitLab!) for managing bug reports, feature requests, and lists of future work - **Issues**.
+GitHub provides a framework (as does GitLab!) for managing bug reports, feature requests, and lists of future work - **Issues**. 
 
-As part of our setup we created a repository from the `climate-analysis` template, a mock repository for a code that analyses climate data files. 
+We'll run through an example of how to create and use them. As part of our setup we created a repository from the `climate-analysis` template. It's a mock repository for a code that analyses climate data files. 
 
 > ## Setup
 >
-> If you haven't got a copy of it, [go to this link](https://github.com/Southampton-RSG-Training/project-novice-climate-analysis/generate) and create a new repository on your account called `climate-analysis`. If you've already got a `climate-analysis` repository from completing earlier training with us, then you can use that one!
-{: .callout}
+> If you didn't make a copy of it earlier, [go to this link](https://github.com/Southampton-RSG-Training/project-novice-climate-analysis/generate) and create a new repository on your account called `climate-analysis`. If you've already got a `climate-analysis` repository from completing earlier training with us, then you can use that one!
+{: .prereq}
 
 Go back to the home page for your `climate-analysis` repository, and click on the Issues tab. You should see a page listing the open issues on your repository, currently none.
 
 ![Issue screen](fig/02-issues/issues-none.png)
 
-If we look at the `rainfall_converison.py` file in our repository, we can see that it has a couple of comments that describe work that needs to be done (sometimes called *"To Do notes"*):
+If we look at the `rainfall_converison.py` file in our repository, we can see that it's got a couple of comments describing work that needs to be done (a.k.a. *"To Do notes"*):
 
 {: .python}
 ~~~
@@ -40,15 +40,13 @@ If we look at the `rainfall_converison.py` file in our repository, we can see th
 # TODO: Add function inches_to_cm
 ~~~
 
-This is an easy way to record information about your code, but it's not very accessible - you can't find what the problems and limitations of it are without going through and reading all the code yourself. 
-
-To make it more accessible, we're going to create a new issue, raising the problem that the functions to convert between inches and milimeters don't work in our code.
+This is an easy way to record information about your code, but it's not very accessible - if the code is in multiple files, you have to read all of them to know what the state of it is.  It's just not a very practical solution and makes it harder for new developers and users to understand your code. Instead, we're going to create a new issue, raising the problem that the functions to convert between inches and milimeters don't work in our code.
 
 ![Creating a new issue](fig/02-issues/issues-new.png)
 
-When you create an issue, you can provide a range of details added to them. They can be **assigned to a specific developer**- this can be a helpful way to know who, if anyone, is currently working to fix an issue (or a way to assign responsibility to someone to deal with it!).
+When you create an issue, you can add some extra details to it. Issues can be **assigned to a specific developer** - this can be a helpful way to know who, if anyone, is currently working to fix an issue (or a way to assign responsibility to someone to deal with it!). We'll dodge responsibility for now. 
 
-We're going to assign this issue the label **Bug**, by clicking on the cogwheel by the Labels section on the right hand column, then submit the issue.
+You can also **label an issue** to describe what type of thing it is. We're going to assign this issue the label **Bug**, by clicking on the cogwheel by the Labels section on the right hand column, then submit the issue.
 
 ![Issue details](fig/02-issues/issues-details.png)
 
@@ -60,16 +58,18 @@ The labels available for issues can be customised, and given a colour, allowing 
 * Help Wanted
 * Question
 
-The **Enhancement** label can be used to create issues that **request new features**, or if they are created by a developer, **indicate planned new features**. The **Bug** label makes the code much more usable, by allowing users to find out if anyone has had the same problem before, and how to fix (or work around) it on their end. Enabling users to solve their own problems can save you a lot of time and stress!
+The **Enhancement** label can be used to create issues that **request new features**, or if they're created by a developer, **indicate planned new features**. The **Bug** label makes the code much more usable, by allowing users to find out if anyone has had the same problem before, and how to fix (or work around) it on their end. Enabling users to solve their own problems can save you a lot of time and stress!
 
-The **Enhancement** label is a great way to communicate your future priorities to your collaborators, and also your future self- it's far too easy to leave a software project for a few months to write a paper, then come back and have forgotten the improvements you were going to make. If you have other users for your code, they can use the label to request new features, or changes to the way the code operates. It's generally worth paying attention to these suggestions, especially if you spend more time developing than running the code. It can be very easy to end up with quirky behaviour because of off-the-cuff choices during development. Extra pairs of eyes can point out ways the code can be made more accessible, and the easier a code is to use, then the more widely it will be adopted and the greater its impact will be.
+The **Enhancement** label is a great way to communicate your future priorities to your collaborators, and also your future self - it's far too easy to leave a software project for a few months to write a paper, then come back and have forgotten the improvements you were going to make. If you have other users for your code, they can use the label to request new features, or changes to the way the code operates. It's generally worth paying attention to these suggestions, especially if you spend more time developing than running the code. It can be very easy to end up with quirky behaviour because of off-the-cuff choices during development. Extra pairs of eyes can point out ways the code can be made more accessible, and the easier a code is to use, then the more widely it will be adopted and the greater its impact will be.
 
 > ## Bug or Enhancement
 >
-> Is the issue we just added really a bug? In this case we could call it an Enhancement - it depends on whether we think this is missing functionality that *should* be there (a bug), or new functionality we want to add to an existing code. If it doesn't suit either, we could just leave it unlabelled - labels just exist to make things clearer after all.
+> Is the issue we just added really a bug? In this case we could call it an **Enhancement** - it depends on whether we think this is missing functionality that *should* be there (a bug), or new functionality we want to add to an existing code. If it doesn't suit either, we could just leave it unlabelled - labels just exist to make things clearer, after all.
 {: .callout}
 
-Having open, publicly-visible lists of the the limitations and problems with your code is incredibly helpful. Even if some issues end up languishing unfixed for years, letting users know about them can save them a huge amount of work attempting to fix what turns out to be an unfixable problem on their end. It can also help you see at a glance what state your code is in, making it easier to prioritise future work!
+Having open, publicly-visible lists of the the limitations and problems with your code is incredibly helpful. Even if some issues end up languishing unfixed for years, letting users know about them can save them a huge amount of work attempting to fix what turns out to be an unfixable problem from their end. It can also help you see at a glance what state your code is in, making it easier to prioritise future work!
+
+It also helps give users more confidence that your code is actively used and developed - it's much better to see an open discussion about the use of a tool or library than silence.
 
 > ## You Are A User
 >
@@ -81,6 +81,12 @@ Having open, publicly-visible lists of the the limitations and problems with you
 > ## Should Old Issues Be Forgot
 >
 > Information decays very quickly. Try and remember all of the problems you had with a code you worked on a few years ago, for example your undergraduate final project. Were there any combinations of input settings that it couldn't cope with, for example?
+>
+> > ## Solution
+> >
+> > To give some examples from real PhD projects:
+> > * A simulation code designed to run on a supercomputer could be restarted if it stopped mid-way through a simulation, but not all the outputs would be valid after restarting.
+> > * An astrophysics simulation code would take multiple times times longer to run *and* give less-accurate answers if the density of gas was raised too high.
 {: .challenge}
 
 ### Wontfix
@@ -89,7 +95,6 @@ One interesting label is **Wontfix**, which indicates that an issue simply won't
 
 The **Lock issue** and **Pin issue** buttons allow you to block future comments on an issue, and pin it to the top of the issues page. This can make it clear you've thought about an issue and dismissed it!
 ![Lock & pin issue](fig/02-issues/issue-locked.png)
-
 
 > ## Issue Templates
 > 
@@ -124,6 +129,8 @@ You can also use the mention system to link **GitHub accounts**. Instead of <kbd
 > > Once you've selected the existing issue, and created your new one, you'll get a link to the previous one:
 > > 
 > > ![Issue linked](fig/02-issues/challenge-issue-link.png) 
+> {: .solution}
+>
 {: .challenge}
 
 ### Commits
