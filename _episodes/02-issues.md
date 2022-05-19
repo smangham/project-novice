@@ -34,11 +34,11 @@ Go back to the home page for your `climate-analysis` repository, and click on th
 
 If we look at the `rainfall_converison.py` file in our repository, we can see that it's got a couple of comments describing work that needs to be done (a.k.a. *"To Do notes"*):
 
-{: .python}
 ~~~
 # TODO: Add function inches_to_m
 # TODO: Add function inches_to_cm
 ~~~
+{: .python}
 
 This is an easy way to record information about your code, but it's not very accessible - if the code is in multiple files, you have to read all of them to know what the state of it is.  It's just not a very practical solution and makes it harder for new developers and users to understand your code. Instead, we're going to create a new issue, raising the problem that the functions to convert between inches and milimeters don't work in our code.
 
@@ -78,7 +78,8 @@ It also helps give users more confidence that your code is actively used and dev
 > Unfortunately, human memory isn't infallible! After spending six months writing your thesis, or a year working on a different sub-topic, it's inevitable you'll forget some of the plans you had and problems you faced. Not documenting these things can lead to you having to re-learn things you already put the effort into discovering before.
 {: .callout}
 
-> ## Should Old Issues Be Forgot
+
+> ## Exercise: Should Old Issues Be Forgot
 > Information decays very quickly. Try and remember all of the problems you had with a code you worked on a few years ago, for example your undergraduate final project. Were there any combinations of input settings that it couldn't cope with, for example?
 >
 > > ## Solution

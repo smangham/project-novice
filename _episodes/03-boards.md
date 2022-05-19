@@ -78,8 +78,9 @@ Sometimes, a card you thought was simple and self-contained might turn out to be
 
 Our project board is looking a little thin, but for an example full one check out the plotting library [Plotly](https://github.com/orgs/plotly/projects/3).
 
-> ## Labelling
+> ## Exercise: Labelling
 > You can see that your issue card has a 'bug' label, but the one you made has no labels. Convert your new card to an issue, and add the **Documentation** label to it.
+>
 >
 > > ## Solution
 > > We convert the card to an issue, and add a quick description:
@@ -89,6 +90,7 @@ Our project board is looking a little thin, but for an example full one check ou
 > > ![Convert card to issue](fig/03-boards/card-to-issue-label.png)
 > {: .solution}
 {: .challenge}
+
 
 ### Prioritisation
 
@@ -102,6 +104,7 @@ Once your project board has a large number of cards on it, you might want to beg
 > 
 > Currently, we don't really have enough cards to prioritise. Create a new card named **"High priority"**, and using one of the prioritisation schemes arrange your board so it's the most important.
 {: .challenge}
+
 
 > ## Advanced Schemes
 > 
