@@ -110,6 +110,7 @@ With our work finished, we can close our issue and move it to the 'Done' column:
 > We want to use the feature-branch workflow, so it would be easy to collaborate with other people. Pick one of your open issues, and fix it using the feature-branch workflow, then once it's done issue a release of your updated `master` branch!
 >
 > If you don't have any issues that can be fixed with the feature-branch workflow (e.g. *'Unclear commit messages'*) then add a new issue that the code has a broken link in the `README.md` file and work on fixing that. Small fixes can even be done directly on GitHub!
+>
 >{: .solution}
 > > ## Solution
 > > We can address the broken links like this:

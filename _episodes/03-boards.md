@@ -81,14 +81,14 @@ Our project board is looking a little thin, but for an example full one check ou
 {: .challenge}
 > ## Exercise: Labelling
 > You can see that your issue card has a 'bug' label, but the one you made has no labels. Convert your new card to an issue, and add the **Documentation** label to it.
-
-{: .solution}
-> ## Solution
-> We convert the card to an issue, and add a quick description:
-> ![Convert card to issue](fig/03-boards/card-to-issue.png)
-> ![Convert card to issue](fig/03-boards/card-to-issue-detail.png)
-> Once we've made the issue, we can follow the link to see it and add the **Documentation** label. It'll show us that the issue is linked to our project board as well:
-> ![Convert card to issue](fig/03-boards/card-to-issue-label.png)
+>
+>{: .solution}
+> > ## Solution
+> > We convert the card to an issue, and add a quick description:
+> > ![Convert card to issue](fig/03-boards/card-to-issue.png)
+> > ![Convert card to issue](fig/03-boards/card-to-issue-detail.png)
+> > Once we've made the issue, we can follow the link to see it and add the **Documentation** label. It'll show us that the issue is linked to our project board as well:
+> > ![Convert card to issue](fig/03-boards/card-to-issue-label.png)
 
 
 ### Prioritisation
