@@ -78,18 +78,17 @@ Sometimes, a card you thought was simple and self-contained might turn out to be
 
 Our project board is looking a little thin, but for an example full one check out the plotting library [Plotly](https://github.com/orgs/plotly/projects/3).
 
+{: .challenge}
 > ## Exercise: Labelling
 > You can see that your issue card has a 'bug' label, but the one you made has no labels. Convert your new card to an issue, and add the **Documentation** label to it.
 >
->
+> {: .solution}
 > > ## Solution
 > > We convert the card to an issue, and add a quick description:
 > > ![Convert card to issue](fig/03-boards/card-to-issue.png)
 > > ![Convert card to issue](fig/03-boards/card-to-issue-detail.png)
 > > Once we've made the issue, we can follow the link to see it and add the **Documentation** label. It'll show us that the issue is linked to our project board as well:
 > > ![Convert card to issue](fig/03-boards/card-to-issue-label.png)
-> {: .solution}
-{: .challenge}
 
 
 ### Prioritisation
@@ -100,10 +99,10 @@ Once your project board has a large number of cards on it, you might want to beg
 * **Priority columns:** Instead of a single **To Do** column, you have two or more- a **To Do: Low Priority** and a **To Do: High Priority**. When adding a card, you pick which is the appropriate column for it. You can even add a **Triage** column for newly-added issues that you've not yet had time to classify. This format works well for project boards devoted to bugs.
 * **Labels:** If you convert each card into an issue, then you can label them with their priority- GitHub lets you create new labels and set their colour. **Green low**, **orange medium** and **red high** priority labels make for a very visually clear indication, but require the most admin as each card has to be an issue to receive a label.
 
+{: .challenge}
 > ## Prioritisation
 > 
 > Currently, we don't really have enough cards to prioritise. Create a new card named **"High priority"**, and using one of the prioritisation schemes arrange your board so it's the most important.
-{: .challenge}
 
 
 > ## Advanced Schemes
@@ -117,9 +116,10 @@ Once your project board has a large number of cards on it, you might want to beg
 
 The **Feature-branch workflow** is a common way of structuring how you develop your code using version control, that sites like GitHub make easy to apply.
 
+{: .callout}
 > ## I Know This
 > If you've attended some previous training that's covered feature-branch workflows, feel free to skip to the 'Best Practise' subsection!
-{: .callout}
+
 
 In the feature-branch workflow, you make use of the ease of creating new 'branches' with Git, parallel versions of your code that you can modify independently and easily merge back together.
 
@@ -135,9 +135,9 @@ Then select the branches we want merged:
 
 Now we've got a stable version of the code on the `master` branch that we can share with others, whilst we continue development independently.
 
+{: .caution}
 > ## Whoops
 > You won't be able to do this bit yourself - I forgot to ask you to check 'Copy all branches' during the template set-up step! This will be fixed in future versions of the material. For now, you can just read it.
-{: .caution}
 
 We can take this one step further - and create new 'feature' branches for each bug we want to address and feature we want to add. Ideally, when we raise an **issue**, if it can't be done in one commit and a few hours of work to fix and test we want to create a new **feature branch**, coming off of our `dev` branch, in which we work on it. 
 

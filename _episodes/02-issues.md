@@ -23,10 +23,11 @@ GitHub provides a framework (as does GitLab!) for managing bug reports, feature 
 
 We'll run through an example of how to create and use them. As part of our setup we created a repository from the `climate-analysis` template. It's a mock repository for a code that analyses climate data files. 
 
+{: .prereq}
 > ## Setup
 >
 > If you didn't make a copy of it earlier, [go to this link](https://github.com/Southampton-RSG-Training/project-novice-climate-analysis/generate) and create a new repository on your account called `climate-analysis`. If you've already got a `climate-analysis` repository from completing earlier training with us, then you can use that one!
-{: .prereq}
+
 
 Go back to the home page for your `climate-analysis` repository, and click on the Issues tab. You should see a page listing the open issues on your repository, currently none.
 
@@ -71,23 +72,23 @@ Having open, publicly-visible lists of the the limitations and problems with you
 
 It also helps give users more confidence that your code is actively used and developed - it's much better to see an open discussion about the use of a tool or library than silence.
 
+{: .callout}
 > ## You Are A User
 >
 > This section focuses a lot on how issues can help communicate the current state of the code to users. As a developer, and possibly also the only user of the code too, you might be tempted to not bother with recording issues and features as you don't need to communicate the information to anyone else.
 >
 > Unfortunately, human memory isn't infallible! After spending six months writing your thesis, or a year working on a different sub-topic, it's inevitable you'll forget some of the plans you had and problems you faced. Not documenting these things can lead to you having to re-learn things you already put the effort into discovering before.
-{: .callout}
 
 
+{: .challenge}
 > ## Exercise: Should Old Issues Be Forgot
 > Information decays very quickly. Try and remember all of the problems you had with a code you worked on a few years ago, for example your undergraduate final project. Were there any combinations of input settings that it couldn't cope with, for example?
 >
+> {: .solution}
 > > ## Solution
 > > To give some examples from real PhD projects:
 > > * A simulation code designed to run on a supercomputer could be restarted if it stopped mid-way through a simulation, but not all the outputs would be valid after restarting.
 > > * An astrophysics simulation code would take multiple times times longer to run *and* give less-accurate answers if the density of gas was raised too high.
-> {: .solution}
-{: .challenge}
 
 ### Wontfix
 
@@ -96,6 +97,7 @@ One interesting label is **Wontfix**, which indicates that an issue simply won't
 The **Lock issue** and **Pin issue** buttons allow you to block future comments on an issue, and pin it to the top of the issues page. This can make it clear you've thought about an issue and dismissed it!
 ![Lock & pin issue](fig/02-issues/issue-locked.png)
 
+{: .callout}
 > ## Issue Templates
 > 
 > Whilst many academic software projects have only user-developers, for others many of the users will not have any experience working on the code, and in some cases not even have any software development experience at all.
@@ -103,7 +105,6 @@ The **Lock issue** and **Pin issue** buttons allow you to block future comments 
 > Getting them to raise issues in a way that's clear, helpful and provides enough information for you to act on (without going back and forth to extract it) can be hard. Fortunately, GitHub provides **Issue templates**. These allow you to set a template that anyone raising an issue is prompted to fill in. GitHub provides a range of default templates, but you can also write your own. 
 >
 > If you have a project with a large number of user-submitted issues, consider setting up issue templates. For more information on them, [check out the GitHub documentation here](https://docs.github.com/en/github/building-a-strong-community/configuring-issue-templates-for-your-repository).
-{: .callout}
 
 
 ## Mentions
@@ -114,12 +115,14 @@ If you realise that several of your bugs have common roots, or that one Enhancem
 
 You can also use the mention system to link **GitHub accounts**. Instead of <kbd>#</kbd>, typing <kbd>@</kbd> will bring up a list of accounts linked to the repository. Users will receive notifications when somebody else references them- you can use this to notify people when you want to check a detail with them, or let them know something has been fixed (much easier than writing out all the same information again in an email!).
 
+{: .challenge}
 > ## Linking Issues
 > 
 > Whilst we've documented that `inches_to_cm` is missing, `inches_to_m` is still missing too. Try to raise a new issue, labelled as a bug, that mentions your previous issue and links to your GitHub account to reference that you are going to be handling it as both are similar.
 >
 > Then, check out the first issue you raised and see if anything has happened.
 >
+> {: .solution}
 > > ## Solution
 > >
 > > You should get a pop-up box looking like this when you enter the <kbd>#</kbd> key:
@@ -129,8 +132,7 @@ You can also use the mention system to link **GitHub accounts**. Instead of <kbd
 > > Once you've selected the existing issue, and created your new one, you'll get a link to the previous one:
 > > 
 > > ![Issue linked](fig/02-issues/challenge-issue-link.png) 
-> {: .solution}
-{: .challenge}
+
 
 ### Commits
 
