@@ -49,8 +49,6 @@ Now we can start looking for problems with the project and recording them as iss
 > > * Poorly-documented functions *(e.g. `plot_bar_charts`)
 > > * Undocumented functions (e.g. `produce_count`)
 
-
-
 Now we'll work on addressing the issues we've raised. If we want to use the feature-branch workflow, the lack of a `dev` branch is the first one we need to fix! So we'll fix that first.
 
 {: .challenge}
