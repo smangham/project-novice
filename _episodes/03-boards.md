@@ -79,11 +79,9 @@ Sometimes, a card you thought was simple and self-contained might turn out to be
 Our project board is looking a little thin, but for an example full one check out the plotting library [Plotly](https://github.com/orgs/plotly/projects/3).
 
 > ## Labelling
-> 
 > You can see that your issue card has a 'bug' label, but the one you made has no labels. Convert your new card to an issue, and add the **Documentation** label to it.
 >
 > > ## Solution
-> >
 > > We convert the card to an issue, and add a quick description:
 > > ![Convert card to issue](fig/03-boards/card-to-issue.png)
 > > ![Convert card to issue](fig/03-boards/card-to-issue-detail.png)
@@ -136,7 +134,7 @@ Now we've got a stable version of the code on the `master` branch that we can sh
 
 > ## Whoops
 > You won't be able to do this bit yourself - I forgot to ask you to check 'Copy all branches' during the template set-up step! This will be fixed in future versions of the material. For now, you can just read it.
-{: .warning}
+{: .caution}
 
 We can take this one step further - and create new 'feature' branches for each bug we want to address and feature we want to add. Ideally, when we raise an **issue**, if it can't be done in one commit and a few hours of work to fix and test we want to create a new **feature branch**, coming off of our `dev` branch, in which we work on it. 
 

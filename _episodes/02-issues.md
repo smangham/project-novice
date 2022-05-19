@@ -79,11 +79,9 @@ It also helps give users more confidence that your code is actively used and dev
 {: .callout}
 
 > ## Should Old Issues Be Forgot
->
 > Information decays very quickly. Try and remember all of the problems you had with a code you worked on a few years ago, for example your undergraduate final project. Were there any combinations of input settings that it couldn't cope with, for example?
 >
 > > ## Solution
-> >
 > > To give some examples from real PhD projects:
 > > * A simulation code designed to run on a supercomputer could be restarted if it stopped mid-way through a simulation, but not all the outputs would be valid after restarting.
 > > * An astrophysics simulation code would take multiple times times longer to run *and* give less-accurate answers if the density of gas was raised too high.
