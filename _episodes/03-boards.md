@@ -127,6 +127,10 @@ In the feature-branch workflow, you make use of the ease of creating new 'branch
 
 You have a `master`/`main` branch, that contains the stable version of the code you want to share with other people, and a `dev`/`develop` branch that holds the work-in-progress version of your code. When you have a version of your code that you're going to use to generate results for a paper, or want to share with collaborators, then you can create a **Pull request** to merge the `dev` branch into `master`. We can go to our repository's **Pull requests** tab, and click **New pull request**:
 
+{: .caution}
+> ## Whoops
+> You won't be able to do this bit yourself - I forgot to ask you to check 'Copy all branches' during the template set-up step! This will be fixed in future versions of the material. For now, you can just read along.
+
 ![Feature-branch workflow](fig/03-boards/pull-request.png)
 
 Then select the branches we want merged:
@@ -135,9 +139,6 @@ Then select the branches we want merged:
 
 Now we've got a stable version of the code on the `master` branch that we can share with others, whilst we continue development independently.
 
-{: .caution}
-> ## Whoops
-> You won't be able to do this bit yourself - I forgot to ask you to check 'Copy all branches' during the template set-up step! This will be fixed in future versions of the material. For now, you can just read it.
 
 We can take this one step further - and create new 'feature' branches for each bug we want to address and feature we want to add. Ideally, when we raise an **issue**, if it can't be done in one commit and a few hours of work to fix and test we want to create a new **feature branch**, coming off of our `dev` branch, in which we work on it. 
 
