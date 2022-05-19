@@ -16,21 +16,28 @@ keypoints:
 
 Now we've seen all the steps involved in developing sustainable code, let's put that knowledge into practise.
 
+Earlier, we made a fork of the `project-novice-demo` repository. The code there is pretty bad - it's written in a very unsustainable way that makes future development harder (and passing the project on to another researcher even harder!). However, as a published project owned by somebody else, we don't have the permissions required to edit it and fix the problems.
+
+Fortunately, we have already forked it, and now we're going to set up a small project to improve it.
+We'll use the tools we've introduced in this lesson so far. Forks don't have **Issues** by default, but you can enable them by going to  the **Settings** tab, then scrolling down to **Features**:
+
+![Selecting the settings tab](fig/06-project/project-settings.png)
+![Enabling issues](fig/06-project/project-settings-issues.png)
+
+Now we can start looking for problems with the project and recording them as issues. One immediate one is that there's no `develop`/`dev` branch - all the work has been done on the `master` branch:
+
+![No dev branch](fig/06-project/project-settings.png)
+
+{: .challenge}
 > ## Identifying issues
->
-> Earlier, we made a fork of the `rf4` repository. The code there is pretty bad- it's written in a very unsustainable way that makes future development harder (and passing the project on to another researcher even harder!). However, as a published project owned by somebody else, we don't have the permissions required to edit it and fix the problems.
->
-> Fortunately, we have already forked it, and now we're going to set up a small project to improve it. Take a look at your fork of the `rf4` repository, identify three problems with the code, and raise them as issues. Forks don't have **Issues** by default, but you can enable them using **Settings -> Options -> Features**.
->
-> Don't try to run the code- there's more than enough things wrong with it that you can spot just from a quick read-through.
->
+> We've found one problem, but there's *plenty* more here. Take a look at your fork of the `project-novice-demo` repository, identify two more things wrong with the code, and raise them as issues. Don't try to run the code - there's more than enough things wrong with it that you can spot just from a quick read-through.
 > Once you've got your issues, create a kanban board on the repo and place them on it.
 >
+> {: .solution}
 > > ## Solution
 > >
 > > There's too many things wrong to provide an exhaustive list, but here's a few you may have spotted:
 > > * No stable releases
-> > * No development branch
 > > * Unclear commit messages
 > > * `LICENSE.md` is empty
 > > * `README.md` has an inaccurate list of files
@@ -41,15 +48,19 @@ Now we've seen all the steps involved in developing sustainable code, let's put 
 > > * Poorly-named variables (e.g. `df47`)
 > > * Poorly-documented functions *(e.g. `plot_bar_charts`)
 > > * Undocumented functions (e.g. `produce_count`)
-> {: .solution}
-{: .challenge}
 
+Now we'll work on addressing the issues we've raised. If we want to use the feature-branch workflow, the lack of a `dev` branch is the first one we need to fix! So we'll fix that first.
+
+{: .challenge}
 > ## Solving problems
 > 
-> Now we've got a project board with all our problems in the To Do column, we can set about fixing one of the issues.
+> Now we've got a `dev` branch and a project board with a To Do column with issues in, we can set about fixing one of them.
 > 
 > We want to use the feature-branch workflow, so it would be easy to collaborate with other people. Pick one of your open issues, and fix it using the feature-branch workflow, then once it's done issue a release of your updated `master` branch!
 >
+> If you don't have any issues that can be fixed with the feature-branch workflow (e.g. *'Unclear commit messages'*) then add a new issue that the code has an inaccurate list of files in `README.md`, and work on fixing that.
+>
+> {: .solution}
 > > ## Solution
 > >
 > > In order to address the issue we chose, we'll need to do the following:
@@ -63,8 +74,7 @@ Now we've seen all the steps involved in developing sustainable code, let's put 
 > > * When `master` is up to date, issue a release on GitHub
 > >
 > > Normally, we wouldn't just merge a branch into `dev` then `dev` straight into `master`- we'd merge several fixes or new features into `dev`, then merge to `master` and make a release. 
-> {: .solution}
-{: .challenge}
+
 
 Now you should have a good idea of the skills and techniques required to manage a project successfully!
 
