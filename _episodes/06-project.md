@@ -55,12 +55,12 @@ Now we'll work on addressing the issues we've raised. If we want to use the feat
 
 Now we'll clone our repository to our machine:
 
-{.bash}
+{: .bash}
 ~~~ 
 git clone git@github.com:smangham/project-novice-demo.git
 ~~~
 
-{.output}
+{: .output}
 ~~~
 Cloning into 'project-novice-demo'...
 remote: Enumerating objects: 28, done.
@@ -73,22 +73,22 @@ Resolving deltas: 100% (13/13), done.
 
 Then create a new branch called `dev` and push it to our remote repository:
 
-{.bash}
+{: .bash}
 ~~~ 
 git checkout -b dev
 ~~~
 
-{.output}
+{: .output}
 ~~~
 Switched to a new branch 'dev'
 ~~~
 
-{.bash}
+{: .bash}
 ~~~ 
 git push -u origin dev
 ~~~
 
-{.output}
+{: .output}
 ~~~
 Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
 remote: 
