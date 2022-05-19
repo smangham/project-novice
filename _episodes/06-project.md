@@ -32,22 +32,22 @@ Now we can start looking for problems with the project and recording them as iss
 > ## Identifying issues
 > We've found one problem, but there's *plenty* more here. Take a look at your fork of the `project-novice-demo` repository, identify two more things wrong with the code, and raise them as issues. Don't try to run the code - there's more than enough things wrong with it that you can spot just from a quick read-through.
 > Once you've got your issues, create a kanban board on the repo and place them on it.
+
+{: .solution}
+> ## Solution
 >
-> {: .solution}
-> > ## Solution
-> >
-> > There's too many things wrong to provide an exhaustive list, but here's a few you may have spotted:
-> > * No stable releases
-> > * Unclear commit messages
-> > * `LICENSE.md` is empty
-> > * `README.md` has an inaccurate list of files
-> > * `README.md` contains broken links
-> > * `What questions do we want to answer with this data?` is unfinished
-> > * Multiple versions of the same file in the repository
-> > * Poorly-named functions (e.g. `add_column5`)
-> > * Poorly-named variables (e.g. `df47`)
-> > * Poorly-documented functions *(e.g. `plot_bar_charts`)
-> > * Undocumented functions (e.g. `produce_count`)
+> There's too many things wrong to provide an exhaustive list, but here's a few you may have spotted:
+> * No stable releases
+> * Unclear commit messages
+> * `LICENSE.md` is empty
+> * `README.md` has an inaccurate list of files
+> * `README.md` contains broken links
+> * `What questions do we want to answer with this data?` is unfinished
+> * Multiple versions of the same file in the repository
+> * Poorly-named functions (e.g. `add_column5`)
+> * Poorly-named variables (e.g. `df47`)
+> * Poorly-documented functions *(e.g. `plot_bar_charts`)
+> * Undocumented functions (e.g. `produce_count`)
 
 Now we'll work on addressing the issues we've raised. If we want to use the feature-branch workflow, the lack of a `dev` branch is the first one we need to fix! So we'll fix that first.
 
@@ -59,21 +59,21 @@ Now we'll work on addressing the issues we've raised. If we want to use the feat
 > We want to use the feature-branch workflow, so it would be easy to collaborate with other people. Pick one of your open issues, and fix it using the feature-branch workflow, then once it's done issue a release of your updated `master` branch!
 >
 > If you don't have any issues that can be fixed with the feature-branch workflow (e.g. *'Unclear commit messages'*) then add a new issue that the code has an inaccurate list of files in `README.md`, and work on fixing that.
+
+{: .solution}
+> ## Solution
 >
-> {: .solution}
-> > ## Solution
-> >
-> > In order to address the issue we chose, we'll need to do the following:
-> > * Move our issue from To Do to Work In Progress
-> > * Select our `master` branch, and create a `dev` branch coming off it
-> > * Select our `dev` branch, and create a new issue branch coming off it- you could call it `issue_<problem_description>` or similar
-> > * Switch to our issue branch, fix the issue, commit our fixes and push them
-> > * Submit a pull request from our issue branch to `dev`
-> > * Close our issue on GitHub
-> > * When `dev` is up to date, submit a pull request from `dev` to `master`
-> > * When `master` is up to date, issue a release on GitHub
-> >
-> > Normally, we wouldn't just merge a branch into `dev` then `dev` straight into `master`- we'd merge several fixes or new features into `dev`, then merge to `master` and make a release. 
+> In order to address the issue we chose, we'll need to do the following:
+> * Move our issue from To Do to Work In Progress
+> * Select our `master` branch, and create a `dev` branch coming off it
+> * Select our `dev` branch, and create a new issue branch coming off it- you could call it `issue_<problem_description>` or similar
+> * Switch to our issue branch, fix the issue, commit our fixes and push them
+> * Submit a pull request from our issue branch to `dev`
+> * Close our issue on GitHub
+> * When `dev` is up to date, submit a pull request from `dev` to `master`
+> * When `master` is up to date, issue a release on GitHub
+>
+> Normally, we wouldn't just merge a branch into `dev` then `dev` straight into `master`- we'd merge several fixes or new features into `dev`, then merge to `master` and make a release. 
 
 
 Now you should have a good idea of the skills and techniques required to manage a project successfully!
