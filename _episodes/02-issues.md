@@ -87,6 +87,7 @@ It also helps give users more confidence that your code is actively used and dev
 > > To give some examples from real PhD projects:
 > > * A simulation code designed to run on a supercomputer could be restarted if it stopped mid-way through a simulation, but not all the outputs would be valid after restarting.
 > > * An astrophysics simulation code would take multiple times times longer to run *and* give less-accurate answers if the density of gas was raised too high.
+> {: .solution}
 {: .challenge}
 
 ### Wontfix
@@ -120,7 +121,7 @@ You can also use the mention system to link **GitHub accounts**. Instead of <kbd
 >
 > Then, check out the first issue you raised and see if anything has happened.
 >
-> ## Solution
+> > ## Solution
 > >
 > > You should get a pop-up box looking like this when you enter the <kbd>#</kbd> key:
 > > 
@@ -130,7 +131,6 @@ You can also use the mention system to link **GitHub accounts**. Instead of <kbd
 > > 
 > > ![Issue linked](fig/02-issues/challenge-issue-link.png) 
 > {: .solution}
->
 {: .challenge}
 
 ### Commits
