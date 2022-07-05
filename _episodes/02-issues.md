@@ -84,7 +84,7 @@ It also helps give users more confidence that your code is actively used and dev
 > ## Exercise: Should Old Issues Be Forgot
 > Information decays very quickly. Try and remember all of the problems you had with a code you worked on a few years ago, for example your undergraduate final project. Were there any combinations of input settings that it couldn't cope with, for example?
 >
-> {: .solution}
+>{: .solution}
 > > ## Solution
 > > To give some examples from real PhD projects:
 > > * A simulation code designed to run on a supercomputer could be restarted if it stopped mid-way through a simulation, but not all the outputs would be valid after restarting.
@@ -122,15 +122,11 @@ You can also use the mention system to link **GitHub accounts**. Instead of <kbd
 >
 > Then, check out the first issue you raised and see if anything has happened.
 >
-> {: .solution}
+>{: .solution}
 > > ## Solution
-> >
 > > You should get a pop-up box looking like this when you enter the <kbd>#</kbd> key:
-> > 
 > > ![Issue linking dropdown](fig/02-issues/challenge-issue-dropdown.png) 
-> > 
 > > Once you've selected the existing issue, and created your new one, you'll get a link to the previous one:
-> > 
 > > ![Issue linked](fig/02-issues/challenge-issue-link.png) 
 
 
