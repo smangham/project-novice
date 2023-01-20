@@ -24,14 +24,14 @@ We'll use the tools we've introduced in this lesson so far. Forks don't have **I
 ![Selecting the settings tab](fig/06-project/project-settings-tab.png)
 ![Enabling issues](fig/06-project/project-settings-issues.png)
 
-Now we can start looking for problems with the project and recording them as issues. One immediate one is that there's no `develop`/`dev` branch - all the work has been done on the `master` branch:
+Now we can start looking for problems with the project and recording them as issues. One immediate one is that there's no `develop`/`dev` branch - all the work has been done on the `master`/`main` branch:
 
 ![No dev branch](fig/06-project/issue-dev.png)
 
 {: .challenge}
 > ## Identifying issues
 > We've found one problem, but there's *plenty* more here. Take a look at your fork of the `project-novice-demo` repository, identify two more things wrong with the code, and raise them as issues. Don't try to run the code - there's more than enough things wrong with it that you can spot just from a quick read-through.
-> Once you've got your issues, create a kanban board on the repo and place them on it.
+> Once you've got your issues, create a new project board, link it to the repo, and place the issues on it.
 >
 >{: .solution}
 > > ## Solution
@@ -48,7 +48,7 @@ Now we can start looking for problems with the project and recording them as iss
 > > * Poorly-documented functions *(e.g. `plot_bar_charts`)
 > > * Undocumented functions (e.g. `produce_count`)
 
-Now we'll work on addressing the issues we've raised. If we want to use the feature-branch workflow, the lack of a `dev` branch is the first one we need to fix! So we'll address that first. We'll move the issue for this to the **In progress** column of our kanban board to let our collaboratorsk know we're fixing it:
+Now we'll work on addressing the issues we've raised. If we want to use the feature-branch workflow, the lack of a `dev` branch is the first one we need to fix! So we'll address that first. We'll move the issue for this to the **In progress** column of our kanban board to let our collaborators know we're fixing it:
 
 ![Moving to in progress column](fig/06-project/project-move-progress.png)
 

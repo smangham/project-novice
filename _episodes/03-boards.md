@@ -31,15 +31,11 @@ In industry, they often use formal project management styles for their boards wi
 
 There's a lot of sites that host project boards. For non-software projects like thesis-writing or organising conferences, you might use [Trello](https://trello.com), but repository hosting sites like GitHub and GitLab have built-in project boards that interact with the other features of the site, so we're going to use them (though other tools like [Jira](https://www.atlassian.com/software/jira) also offer this functionality). This episode will use GitHub as an example, but GitLab has almost identical functionality. 
 
-First, we'll go to our repository's **Project** tab. GitHub offers two types of project - we'll be using the classic one, that's linked to the repository. Select the 'Project' (not beta!) tab:
+Let's go to our `climate-analysis` repository, go to the **Projects** tab, then select click on the green **Link a project** dropdown and select **New Project**. 
 
-![Adding boards](fig/03-boards/board-tab.png)
+![Link a project to a repository](fig/03-boards/project-new.png)
 
-Then from there, click **Create a new project**. A repository can have multiple project boards on it - for example, if multiple PhD students have their own project working on a code, each can have a project board for their own changes, or you can create a new board for each paper.
-
-![Adding boards](fig/03-boards/board-none.png)
-
-First, we need to give our project a name, e.g. "Early development". Then, we can think about the columns.
+Then just name it "Climate Analysis", and select **Board** from the list on the left. Then we've got our new **Project Board**! A repository can have any number of project boards linked to it - for example, each PhD student in a collaboration can have their own project board, or you can create a new project board for each paper you're writing.
 
 ### Columns
 
@@ -48,11 +44,9 @@ Almost all styles of board have three 'basic' columns, with pretty self-explanat
 * In Progress
 * Done
 
-GitHub provides template boards that automatically have those columns- and more, it has **automated templates**. If you add a pull request to the board, it can automatically move it to 'Done' for you when you merge it. We're going to select the **Automated kanban template**, then **Create project**.
+GitHub's default project boards that automatically have those columns - and more it **automates them**. If you add a pull request to the board, it can automatically move it to 'Done' for you when you merge it.
 
-![Adding board details](fig/03-boards/board-details.png)
-
-One common extra column is **On hold** or **Waiting**. If you have tasks that get held up by waiting on other people (e.g. to provide you with data or respond to your questions) then moving them to a separate column makes their current state clearer. We're going to add a **Waiting** column, and drag it in-between In Progress and Done (you might have to scroll over a bit to see the **Add column** button!):
+One common extra column is **On hold** or **Waiting**. If you have tasks that get held up by waiting on other people (e.g. to provide you with data or respond to your questions) then moving them to a separate column makes their current state clearer. We're going to add a **Waiting** column, and drag it in-between **In Progress** and **Done** (you might have to scroll over a bit to see the **Add column** button!):
 
 ![Adding columns](fig/03-boards/board-column-add.png)
 
@@ -64,13 +58,15 @@ Now we've got our board fully set up:
 
 One of the advantages of using GitHub or GitLab to host your project board is the integration with **issues**. You can easily add issues to your project board, to keep track of how they're progressing.
 
-You can create cards on the project board, or you can **import existing issues**. Let's add the issue we created last episode to the **To Do** column - click **Add card** and drag it over.
+You can create cards on the project board, or you can **import existing issues**. Let's add the issue we created last episode to the **Todo** column - click 
 
 ![Adding existing issues](fig/03-boards/board-issues.png)
 
-We can also create a card without an issue. The repo currently doesn't tell people how to use the code- it needs an example. So let's clear out the default cards GitHub adds using the **...** button and create a new one in **To Do** using the **+** button.
+We can also create a card without an issue. The repo currently doesn't tell people how to use the code - it needs an example. So let's create a card about it, that we can promote to a full issue later!
 
-![Deleting old cards](fig/03-boards/card-delete.png) ![Adding new cards](fig/03-boards/board-add.png)
+Click **Add item** at the bottom of the **Todo** column, and give it the title "Add example of use".
+
+![Adding new cards](fig/03-boards/board-add.png)
 
 Notes can have detailed content like checklists, but that only goes so far. Later on you might want to convert the card to an issue so you can add labels or write detailed comments. Fortunately, you can use the **Convert to issue** option you just saw in the **...** menu. It's often a good idea as you can use the comments section on the issue to write everything you tried- and, importantly, everything that *failed* for future reference.
 
@@ -116,29 +112,34 @@ Once your project board has a large number of cards on it, you might want to beg
 
 The **Feature-branch workflow** is a common way of structuring how you develop your code using version control, that sites like GitHub make easy to apply.
 
-{: .callout}
-> ## I Know This
-> If you've attended some previous training that's covered feature-branch workflows, feel free to skip to the 'Best Practise' subsection!
-
-
 In the feature-branch workflow, you make use of the ease of creating new 'branches' with Git, parallel versions of your code that you can modify independently and easily merge back together.
 
 ![Feature-branch workflow](fig/03-boards/git-feature-branch.svg)
 
-You have a `master`/`main` branch, that contains the stable version of the code you want to share with other people, and a `dev`/`develop` branch that holds the work-in-progress version of your code. When you have a version of your code that you're going to use to generate results for a paper, or want to share with collaborators, then you can create a **Pull request** to merge the `dev` branch into `master`. We can go to our repository's **Pull requests** tab, and click **New pull request**:
+You have a `main` branch, that contains the stable version of the code you want to share with other people, and a `dev` branch that holds the work-in-progress version of your code. When you have a version of your code that you're going to use to generate results for a paper, or want to share with collaborators, then you can create a **Pull Request** to merge the `dev` branch into `main`. 
 
-{: .caution}
-> ## Whoops
-> You won't be able to do this bit yourself - I forgot to ask you to check 'Copy all branches' during the template set-up step! This will be fixed in future versions of the material. For now, you can just read along.
+Let's go to our `rainfall_conversion.py` file, switch to the `dev` branch by clicking on the **Branch** dropdown on the top-left, switch to `dev`, then click the **Edit** button (that looks like a pencil, on the right side of the text) and document the file:
 
-![Feature-branch workflow](fig/03-boards/pull-request.png)
+![Documenting rainfall module](fig/03-boards/rainfall-docs)
 
-Then select the branches we want merged:
+Then commit it to `dev`:
 
-![Feature-branch workflow](fig/03-boards/pull-request-make.png)
+![Documenting rainfall module](fig/03-boards/rainfall-commit)
 
-Now we've got a stable version of the code on the `master` branch that we can share with others, whilst we continue development independently.
+Once you've made the commit, now we can open a **Pull Request**, by going to the **Pull Requests** tab, clicking **New pull request**, and selecting the `main` and `dev` branches:
 
+
+![Documenting rainfall module](fig/03-boards/pull-request)
+
+{: .warning}
+> ## No `dev` branch
+> 
+> If you copied the repo from a template but didn't check the **Copy all branches** button,
+> then you'll be missing the `dev` branch! You'll have to create it yourself. 
+> Follow the process above, but this time select "Create a new branch" 
+> instead of "Commit directly to `main`", and name your new branch `dev`.
+
+Now we have a **Pull Request**! We can keep our stable version of the code on our `main` branch, and work on our `dev` branch until we're happy, and then action the pull request to merge it in. Until then, our changes don't affect the version on our `main` branch that our collaborators are using.
 
 We can take this one step further - and create new 'feature' branches for each bug we want to address and feature we want to add. Ideally, when we raise an **issue**, if it can't be done in one commit and a few hours of work to fix and test we want to create a new **feature branch**, coming off of our `dev` branch, in which we work on it. 
 
@@ -154,9 +155,9 @@ There's some best practise associated with the workflow:
 * It's OK to commit broken, work-in-progress code to a feature branch as it's not expected to be 'finished' until you submit a pull request.
 * Once your feature is tested and it's ready to merge, submit a pull request to `dev`.
 * Don't commit broken, work-in-progress code to `dev`! If someone wants to make a new branch, or fix a bug, they'll be using `dev` as a base, so it needs to work fine.
-* Only pull from `dev` to `master` when you think `dev` is stable. This is the version people will be downloading to verify the results from your papers.
+* Only pull from `dev` to `main` when you think `dev` is stable. This is the version people will be downloading to verify the results from your papers.
 
-In industry, there's normally strict testing criteria for when you merge in feature branches or merge `dev` into `master`. 
+In industry, there's normally strict testing criteria for when you merge in feature branches or merge `dev` into `main`. 
 That's a lot harder to apply in academia - in an experimental code, there is often no known ideal behaviour to test against,
 and you expect your code's output to change as you alter the equations and assumptions.
 

@@ -33,15 +33,14 @@ Go back to the home page for your `climate-analysis` repository, and click on th
 
 ![Issue screen](fig/02-issues/issues-none.png)
 
-If we look at the `rainfall_converison.py` file in our repository, we can see that it's got a couple of comments describing work that needs to be done (a.k.a. *"To Do notes"*):
+If we look at the `climate_analysis.py` file in our repository, we can see that it's got a comments describing work that needs to be done (a.k.a. a *"To Do note"*):
 
 ~~~
-# TODO: Add function inches_to_m
-# TODO: Add function inches_to_cm
+# TODO(smangham): Add call to process rainfall
 ~~~
 {: .python}
 
-This is an easy way to record information about your code, but it's not very accessible - if the code is in multiple files, you have to read all of them to know what the state of it is.  It's just not a very practical solution and makes it harder for new developers and users to understand your code. Instead, we're going to create a new issue, raising the problem that the functions to convert between inches and milimeters don't work in our code.
+This is an easy way to record information about your code, but it's not very accessible - if the code is in multiple files, you have to read all of them to know what the state of it is.  It's just not a very practical solution and makes it harder for new developers and users to understand your code. Instead, we're going to create a new issue, raising the problem that the rainfall processing functionality isn't yet working.
 
 ![Creating a new issue](fig/02-issues/issues-new.png)
 
@@ -118,7 +117,12 @@ You can also use the mention system to link **GitHub accounts**. Instead of <kbd
 {: .challenge}
 > ## Linking Issues
 > 
-> Whilst we've documented that `inches_to_cm` is missing, `inches_to_m` is still missing too. Try to raise a new issue, labelled as a bug, that mentions your previous issue and links to your GitHub account to reference that you are going to be handling it as both are similar.
+> We've documented that we've not implemented any rainfall processing in `climate_analysis.py`,
+> but the rainfall code we'd want to use is completely undocumented. We need to fix that first!
+> 
+> Create a new issue, labelled **Documentation**, that mentions your previous issue and links
+> to your GitHub account to reference that you'll be fixing this issue as it's a pre-requisite
+> for the first one.
 >
 > Then, check out the first issue you raised and see if anything has happened.
 >
