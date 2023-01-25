@@ -89,7 +89,7 @@ It's often a good idea as you can use the comments section on the issue to write
 Our project board is looking a little thin, but for an example full one check out the plotting library [Plotly](https://github.com/orgs/plotly/projects/3).
 
 {: .challenge}
-> ## Exercise: Labelling
+> ## Exercise: Issue Labels
 > You can see that your issue card has a 'bug' label, but the one you made has no labels. Convert your new card to an issue, and add the **Documentation** label to it.
 >
 >{: .solution}
@@ -100,7 +100,7 @@ Our project board is looking a little thin, but for an example full one check ou
 > > ![Select the documentation label](fig/03-boards/project-card-challenge-issue-label.png)
 
 
-### Labelling
+### Board Details
 
 By default, the board only shows the status of each issue, and who's working on it. If we want to see a little bit more info (like the **Documentation** label we just applied!) we need to change that.
 
@@ -110,7 +110,7 @@ Go to the **View 1** tab at the top, click the **Down arrow**, and select **Fiel
 
 Then we can tick the **Labels** field and use the **Save changes** button on the right-hand side:
 
-![Saving updated filters](fig/03-boards/project-filter.png)](fig/03-boards/project-filter-save.png)
+![Saving updated filters](fig/03-boards/project-filter-save.png)
 
 
 ### Prioritisation
@@ -221,5 +221,3 @@ As you can see, the fork looks and works just like a normal repository, but hand
 ![Created fork](fig/04-features/fork-made.png)
 
 You may also be able to use forks to create modified versions of existing codes that better suit your needs, depending on their software license. It is good practise to submit your modifications and improvements back to the original, though.
-
-{% include links.md %}

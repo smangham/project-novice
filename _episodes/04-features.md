@@ -183,6 +183,3 @@ Within the open source licenses, there are two categories, **copyleft** and **pe
 The copyleft licences in the GPL still give a lot of freedom to the end users, but any code that they write based on GPLed code must also be licensed under the same license. This gives the developer assurance that anyone building on their code is also contributing back to the community. It’s actually a little more complicated than this, and the variants all have slightly different conditions and applicability, but this is the core of the license.
 
 Which of these types of license you prefer is up to you and those you develop code with. If you want more information, or help choosing a license, the [Choose An Open-Source License (linked here)](https://choosealicense.com) site can help. 
-
-
-{% include links.md %}
