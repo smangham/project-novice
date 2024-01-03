@@ -20,7 +20,7 @@
 - Database creation & management
 - HPC simulation codes
 - Machine learning pipelines
-- OSes & drivers
+- Firmware & drivers
 
 
 ### The Small
@@ -34,8 +34,8 @@
 ### The Commonalities
 
 - May not be true for Engineering/CompSci!
-- *Instrumental*- not a goal in itself
-- *Experimental*- may not have a clear spec
+- *Instrumental* - not a goal in itself
+- *Experimental* - may not have a clear spec
 - Small teams
 
 
@@ -49,34 +49,23 @@
 - Disposable
 
 
-### Serious Problems
+### The Outcomes
 
 - Software Is Science
 - Reproducibility
 - Wasted effort
 - Harms collaboration
+- Knowledge decay
+- Bus Factor!
 
 
 ## 2. How Do We Avoid This
 
 
-### Forward-thinking
+### Sustainable Software
 
-- Assume people will try to understand
-- Assume people will try to reproduce
-- Make it as easy as possible
-
-
-### Understanding
-
-- Write clear code
-- Document your code
+- Clearly plan what you can
+- Assume others will read your code
 - Document your *development process*
 - Document your code's limitations
-
-
-### Reproducibility
-
-- Track versions of your code
-- Specify versions used in your papers
-- Cite your code
+- Track and cite specific versions
