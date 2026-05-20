@@ -8,15 +8,12 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reset.css">
   <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <style>
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
   <link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme">
   <!-- Printing and PDF exports -->
@@ -40,8 +37,7 @@
   <p class="author">Southampton RSG</p>
 </section>
 
-<section><section id="introduction" class="title-slide slide level2"><h2>0. Introduction</h2></section>
-<section id="before-we-start" class="slide level3">
+<section><section id="introduction" class="title-slide slide level2"><h2>0. Introduction</h2></section><section id="before-we-start" class="slide level3">
 <h3>Before We Start</h3>
 <ul>
 <li>Make sure you have an account at <a href="https://www.github.com">github.com</a></li>
@@ -50,17 +46,15 @@
 <li>e.g. Atom, Sublime Text, Notepad++, BBEdit</li>
 </ul>
 </section></section>
-<section><section id="what-is-academic-software" class="title-slide slide level2"><h2>1. What Is Academic Software?</h2></section>
-<section id="the-large" class="slide level3">
+<section><section id="what-is-academic-software" class="title-slide slide level2"><h2>1. What Is Academic Software?</h2></section><section id="the-large" class="slide level3">
 <h3>The Large</h3>
 <ul>
 <li>Database creation &amp; management</li>
 <li>HPC simulation codes</li>
 <li>Machine learning pipelines</li>
-<li>Firmware &amp; drivers</li>
+<li>OSes &amp; drivers</li>
 </ul>
-</section>
-<section id="the-small" class="slide level3">
+</section><section id="the-small" class="slide level3">
 <h3>The Small</h3>
 <ul>
 <li>Collections of scripts</li>
@@ -68,17 +62,15 @@
 <li>Plotting figures</li>
 <li>Toy models</li>
 </ul>
-</section>
-<section id="the-commonalities" class="slide level3">
+</section><section id="the-commonalities" class="slide level3">
 <h3>The Commonalities</h3>
 <ul>
 <li>May not be true for Engineering/CompSci!</li>
-<li><em>Instrumental</em> - not a goal in itself</li>
-<li><em>Experimental</em> - may not have a clear spec</li>
+<li><em>Instrumental</em>- not a goal in itself</li>
+<li><em>Experimental</em>- may not have a clear spec</li>
 <li>Small teams</li>
 </ul>
-</section>
-<section id="the-issues" class="slide level3">
+</section><section id="the-issues" class="slide level3">
 <h3>The Issues</h3>
 <ul>
 <li><strong>Paperware</strong></li>
@@ -88,32 +80,42 @@
 <li>Can’t onboard people</li>
 <li>Disposable</li>
 </ul>
-</section>
-<section id="the-outcomes" class="slide level3">
-<h3>The Outcomes</h3>
+</section><section id="serious-problems" class="slide level3">
+<h3>Serious Problems</h3>
 <ul>
 <li>Software Is Science</li>
 <li>Reproducibility</li>
 <li>Wasted effort</li>
 <li>Harms collaboration</li>
-<li>Knowledge decay</li>
-<li>Bus Factor!</li>
 </ul>
 </section></section>
-<section><section id="how-do-we-avoid-this" class="title-slide slide level2"><h2>2. How Do We Avoid This</h2></section>
-<section id="sustainable-software" class="slide level3">
-<h3>Sustainable Software</h3>
+<section><section id="how-do-we-avoid-this" class="title-slide slide level2"><h2>2. How Do We Avoid This</h2></section><section id="forward-thinking" class="slide level3">
+<h3>Forward-thinking</h3>
 <ul>
-<li>Clearly plan what you can</li>
-<li>Assume others will read your code</li>
+<li>Assume people will try to understand</li>
+<li>Assume people will try to reproduce</li>
+<li>Make it as easy as possible</li>
+</ul>
+</section><section id="understanding" class="slide level3">
+<h3>Understanding</h3>
+<ul>
+<li>Write clear code</li>
+<li>Document your code</li>
 <li>Document your <em>development process</em></li>
 <li>Document your code’s limitations</li>
-<li>Track and cite specific versions</li>
+</ul>
+</section><section id="reproducibility" class="slide level3">
+<h3>Reproducibility</h3>
+<ul>
+<li>Track versions of your code</li>
+<li>Specify versions used in your papers</li>
+<li>Cite your code</li>
 </ul>
 </section></section>
     </div>
   </div>
 
+  <script src="reveal.js/lib/js/head.min.js"></script>
   <script src="reveal.js/js/reveal.js"></script>
 
   <script>
