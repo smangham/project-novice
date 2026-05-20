@@ -13,6 +13,9 @@ jobs:
       - name: Checkout the lesson
         uses: actions/checkout@v2
 
+      - name: Install Cairo graphics library
+        run: sudo apt-get install -y libcairo2-dev libjpeg-dev
+
       - name: Setup Git
         run: |
           git config --local user.email "actions@github.com"
@@ -75,15 +78,12 @@ jobs:
           python bin/get_schedules.py
           python bin/get_setup.py
 
-      - name: Build the slides using Pandoc
-        uses: docker://pandoc/core:2.9
-        with:
-          args: >-
-            -s -t revealjs 
-            -o slides/index.html slides/index.md
-            -V theme=black 
-            --slide-level=3
-  
+      - name: Build the slides
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: |
+          cd slides
+          bash build_slides.sh
+
       - name: Deploy the website to gh-pages
         uses: JamesIves/github-pages-deploy-action@4.1.7
         with:
